@@ -98,7 +98,7 @@
                 :k 0 :n 1})))))
 
 (deftest build-only-home-supply
-  (testing "with some capacity constraints reached"
+  (testing "with no imports"
     (
       ; Act
       let [sc1 (build {:supply {:c1 10 :c2 10}
@@ -111,6 +111,44 @@
                {:kernel {:c1 0 :c2 0}
                 :price 10
                 :k 0 :n 0})))))
+
+(deftest price-inc-test
+  (testing "Estimate auction price increment from single market data"
+    (
+      ; Act
+      let [p1 (price-inc [:c1]
+                         {:supply {:c1 2 :c2 3 :c3 3}
+                          :entry {:c1 1 :c2 1 :c3 1}
+                          :total-demand 5}
+                         {:price 3})
+           p2 (price-inc [:c1]
+                         {:supply {:c1 1 :c2 3 :c3 3}
+                          :entry {:c1 1 :c2 1 :c3 1}
+                          :total-demand 5}
+                         {:price 3})
+           p3 (price-inc [:c1 :c3]
+                         {:supply {:c1 1 :c2 3 :c3 3}
+                          :entry {:c1 1 :c2 1 :c3 1}
+                          :total-demand 5}
+                         {:price 4})
+           p4 (price-inc [:c1 :c2 :c3]
+                         {:supply {:c1 2 :c2 3 :c3 1}
+                          :entry {:c1 1 :c2 1 :c3 2}
+                          :total-demand 15}
+                         {:price 10})
+           ; skip imports with no market demand
+           p5 (price-inc [:c1 :c2]
+                         {:supply {:c1 1 :c2 1}
+                          :entry {:c1 1 :c2 5}
+                          :total-demand 5}
+                         {:price 5})]
+
+        ; Assert
+        (is (= p1 1))
+        (is (= p2 1))
+        (is (= p3 1))
+        (is (= p4 6))
+        (is (= p5 3)))))
 
 
 ;;; test grouping
@@ -127,4 +165,5 @@
 (defn test-ns-hook
   "Explicit definition of tests in the namespace."
   []
-  (build-test))
+  (build-test)
+  (price-inc-test))

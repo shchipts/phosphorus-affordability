@@ -17,7 +17,9 @@
 
 (defn- with-home
   "TODO:"
-  [entry demand total-demand]
+  [{entry :entry
+    demand :demand
+    total-demand :total-demand}]
   (assoc
     entry
     home
@@ -44,23 +46,32 @@
                      ks))))
        (apply zipmap)))
 
+(defn- exit
+  "TODO:"
+  [{supply :supply
+    entry :entry
+    total-demand :total-demand}]
+  (reduce-kv (fn[m k v]
+               (->> (get entry k)
+                    (+ v)
+                    (#(if (> % total-demand)
+                        total-demand
+                        %))
+                    (assoc m k)))
+             {}
+             supply))
 
 (defn build
   "Builds correspondence between optimal import bundles and market price."
   [{supply :supply
     demand :demand
     entry :entry
-    total-demand :total-demand}]
-  (let [exit_ (->> (map (fn[[k v]]
-                          (-> (get entry k)
-                              (+ v)
-                              (#(if (> % total-demand)
-                                  total-demand
-                                  %))))
-                        supply)
-                   (zipmap (keys supply))
-                   (#(assoc % :home total-demand)))
-        entry_ (with-home entry demand total-demand)
+    total-demand :total-demand
+    :as market-parameters}]
+  (let [exit_ (assoc (exit market-parameters)
+                     :home
+                     total-demand)
+        entry_ (with-home market-parameters)
         fns (demand-fns entry_ exit_)
         aggregate #(->> (vals fns)
                         (map (fn[f](f %)))
@@ -77,21 +88,32 @@
            last
            ((fn[[p v]]
               (let [active (->> (keys fns)
-                                 (filter #(> (get exit_ %) p))
-                                 (filter #(<= (get entry_ %) p)))]
-                 (->> (count active)
-                      (quot (- demand v))
-                      (+ p)
-                      ((juxt (fn[_](count active))
-                             (fn[kp](- demand (aggregate kp)))
-                             (fn[kp](->> (count active)
-                                         (mod (- demand v))
-                                         (#(if (> % 0) (inc kp) kp))))
-                             (fn[kp]
-                               (reduce-kv #(assoc %1 %2 (%3 kp))
-                                          {}
-                                          (dissoc fns home)))))
-                      (zipmap [:n :k :price :kernel]))))))
+                                (filter #(> (get exit_ %) p))
+                                (filter #(<= (get entry_ %) p)))]
+                (->> (count active)
+                     (quot (- demand v))
+                     (+ p)
+                     ((juxt (fn[_](count active))
+                            (fn[kp](- demand (aggregate kp)))
+                            (fn[kp](->> (count active)
+                                        (mod (- demand v))
+                                        (#(if (> % 0) (inc kp) kp))))
+                            (fn[kp]
+                              (reduce-kv #(assoc %1 %2 (%3 kp))
+                                         {}
+                                         (dissoc fns home)))))
+                     (zipmap [:n :k :price :kernel]))))))
       (->> (repeat 0)
            (zipmap (keys entry))
            (assoc {:n 0 :k 0 :price total-demand} :kernel)))))
+
+(defn price-inc
+  "Measures price increment for next iteration in English auction
+  from single market data."
+  [ids {entry :entry :as market-parameters} {p :price}]
+  (let [exit (exit market-parameters)]
+    (->> (filter #(< (get entry %) p) ids)
+         (map #(let[v (get exit %)]
+                 (if (< v p) (- p v) 1)))
+         sort
+         first)))

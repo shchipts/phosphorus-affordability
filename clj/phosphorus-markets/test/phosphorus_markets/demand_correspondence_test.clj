@@ -88,7 +88,7 @@
                 :k 0 :n 1}))
 
         (is (= sc3
-               {:kernel {:c1 18 :c2 18 :c3 12 :c4 12 :c5 0}
+               {:kernel {:c1 18 :c2 18 :c3 12 :c4 12}
                 :price 26
                 :k 2 :n 4}))
 
@@ -103,14 +103,37 @@
       ; Act
       let [sc1 (build {:supply {:c1 10 :c2 10}
                        :demand 5
-                       :entry {:c1 10 :c2 10}
+                       :entry {:c1 10 :c2 20}
                        :total-demand 10})]
 
         ; Assert
         (is (= sc1
-               {:kernel {:c1 0 :c2 0}
+               {:kernel {:c1 0}
                 :price 10
                 :k 0 :n 0})))))
+
+(deftest include-only-importers-selling-to-market
+  (testing "with only importers who supply some goods to a market"
+    (
+      ; Act
+      let [sc1 (build {:supply {:c1 90 :c2 90 :c3 90 :c4 90 :c5 90 :c6 90}
+                       :demand 55
+                       :entry {:c1 10 :c2 10 :c3 25 :c4 25 :c5 31 :c6 32}
+                       :total-demand 90})
+           sc2 (build {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
+                       :demand 60
+                       :entry {:c1 4 :c2 7 :c3 9 :c4 26 :c5 45}
+                       :total-demand 100})]
+
+        ; Assert
+        (is (= sc1
+               {:kernel {:c1 21 :c2 21 :c3 6 :c4 6 :c5 0}
+                :price 32
+                :k 1 :n 5}))
+        (is (= sc2
+               {:kernel {:c1 22 :c2 19 :c3 17 :c4 0}
+                :price 27
+                :k 2 :n 4})))))
 
 (deftest price-inc-test
   (testing "Estimate auction price increment from single market data"
@@ -157,7 +180,8 @@
   (testing "Build market demand correspondence:\n"
     (build-without-capacity-hit)
     (build-with-capacity-hit)
-    (build-only-home-supply)))
+    (build-only-home-supply)
+    (include-only-importers-selling-to-market)))
 
 
 ;;; tests in the namespace

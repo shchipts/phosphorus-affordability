@@ -6,7 +6,7 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 
-(ns ^{:doc ""
+(ns ^{:doc "TODO:"
       :author "Anna Shchiptsova"}
   phosphorus-markets.demand-correspondence)
 
@@ -23,8 +23,7 @@
   (assoc
     entry
     home
-    (- total-demand
-               demand)))
+    (- total-demand demand)))
 
 (defn- demand-fn
   "TODO:"
@@ -95,17 +94,29 @@
                      (+ p)
                      ((juxt (fn[_](count active))
                             (fn[kp](- demand (aggregate kp)))
-                            (fn[kp](->> (count active)
-                                        (mod (- demand v))
-                                        (#(if (> % 0) (inc kp) kp))))
                             (fn[kp]
-                              (reduce-kv #(assoc %1 %2 (%3 kp))
-                                         {}
-                                         (dissoc fns home)))))
-                     (zipmap [:n :k :price :kernel]))))))
-      (->> (repeat 0)
-           (zipmap (keys entry))
-           (assoc {:n 0 :k 0 :price total-demand} :kernel)))))
+                              (let [price (->> (count active)
+                                               (mod (- demand v))
+                                          (#(if (> % 0) (inc kp) kp)))]
+                                (->> (dissoc fns home)
+                                     (filter (fn[[_ f]]
+                                               (> (f price) 0)))
+                                     (into {})
+                                     (reduce-kv #(assoc %1 %2 (%3 kp))
+                                                {})
+                                     (hash-map :price price :kernel))))))
+                     (#(->> (butlast %)
+                            (zipmap [:n :k :price])
+                            (merge (last %)))))))))
+      (let [kv {:n 0
+                :k 0
+                :price total-demand}]
+        (->> (filter (fn[[_ v]]
+                       (= v total-demand))
+                     entry)
+             keys
+             (#(zipmap % (repeat 0)))
+             (assoc kv :kernel))))))
 
 (defn price-inc
   "Measures price increment for next iteration in English auction

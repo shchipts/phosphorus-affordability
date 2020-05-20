@@ -104,13 +104,29 @@
       let [sc1 (build {:supply {:c1 10 :c2 10}
                        :demand 5
                        :entry {:c1 10 :c2 20}
+                       :total-demand 10})
+           sc2 (build {:supply {:c1 10 :c2 10}
+                       :demand 5
+                       :entry {:c1 9 :c2 20}
+                       :total-demand 10})
+           sc3 (build {:supply {:c1 10 :c2 10 :c3 10}
+                       :demand 5
+                       :entry {:c1 9 :c2 20 :c3 9}
                        :total-demand 10})]
 
         ; Assert
         (is (= sc1
+               {:kernel {}
+                :price 10
+                :k 0 :n 1}))
+        (is (= sc2
                {:kernel {:c1 0}
                 :price 10
-                :k 0 :n 0})))))
+                :k 1 :n 2}))
+        (is (= sc3
+               {:kernel {:c1 0 :c3 0}
+                :price 10
+                :k 1 :n 3})))))
 
 (deftest include-only-importers-selling-to-market
   (testing "with only importers who supply some goods to a market"
@@ -123,6 +139,10 @@
            sc2 (build {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
                        :demand 60
                        :entry {:c1 4 :c2 7 :c3 9 :c4 26 :c5 45}
+                       :total-demand 100})
+           sc3 (build {:supply {:c1 80 :c2 80}
+                       :demand 80
+                       :entry {:c1 10 :c2 55}
                        :total-demand 100})]
 
         ; Assert
@@ -133,7 +153,11 @@
         (is (= sc2
                {:kernel {:c1 22 :c2 19 :c3 17 :c4 0}
                 :price 27
-                :k 2 :n 4})))))
+                :k 2 :n 4}))
+        (is (= sc3
+               {:kernel {:c1 45}
+                :price 55
+                :k 0 :n 2})))))
 
 (deftest price-inc-test
   (testing "Estimate auction price increment from single market data"
@@ -173,6 +197,98 @@
         (is (= p4 6))
         (is (= p5 3)))))
 
+(deftest rebuild-test
+  (testing "Rebuild demand correspondence from previous iteration price level"
+    (
+      ; Act
+      let [sc-case1-1 (rebuild {:supply {:c1 100 :c2 100}
+                                :demand 60
+                                :entry {:c1 10 :c2 20}
+                                :total-demand 100}
+                               {:price 43 :k 0})
+           sc-case1-2 (rebuild {:supply {:c1 100 :c2 100}
+                                :demand 60
+                                :entry {:c1 11 :c2 20}
+                                :total-demand 100}
+                               {:price 44 :k 1})
+           sc-case1-3 (rebuild {:supply {:c1 100 :c2 100}
+                                :demand 60
+                                :entry {:c1 100 :c2 99}
+                                :total-demand 100}
+                               {:price 44 :k 2})
+           sc-case1-4 (rebuild {:supply {:c1 100 :c2 100}
+                                :demand 60
+                                :entry {:c1 100 :c2 100}
+                                :total-demand 100}
+                               {:price 100 :k 1})
+
+           sc-case2-1 (rebuild {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
+                                :demand 100
+                                :entry {:c1 4 :c2 7 :c3 14 :c4 25 :c5 27}
+                                :total-demand 138}
+                               {:price 42 :k 1})
+           sc-case2-2 (rebuild {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
+                                :demand 100
+                                :entry {:c1 12 :c2 7 :c3 14 :c4 25 :c5 27}
+                                :total-demand 138}
+                               {:price 42 :k 1})
+           sc-case2-3 (rebuild {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
+                                :demand 100
+                                :entry {:c1 12 :c2 7 :c3 14 :c4 27 :c5 28}
+                                :total-demand 138}
+                               {:price 42 :k 2})
+           sc-case2-4 (rebuild {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
+                                :demand 100
+                                :entry {:c1 38 :c2 38 :c3 38 :c4 38 :c5 38}
+                                :total-demand 138}
+                               {:price 43 :k 1})
+
+           sc-case3-1 (rebuild {:supply {:c1 30 :c2 20 :c3 20 :c4 20 :c5 10}
+                                :demand 60
+                                :entry {:c1 7 :c2 47 :c3 9 :c4 46 :c5 45}
+                                :total-demand 100}
+                               {:price 27 :k 2})]
+
+        ; Assert
+        (is (= sc-case1-1
+               {:kernel {:c1 33 :c2 23}
+                :price 44
+                :k 1 :n 3}))
+        (is (= sc-case1-2
+               {:kernel {:c1 32 :c2 23}
+                :price 44
+                :k 2 :n 3}))
+        (is (= sc-case1-3
+               {:kernel {:c2 0}
+                :price 100
+                :k 1 :n 2}))
+        (is (= sc-case1-4
+               {:kernel {}
+                :price 100
+                :k 0 :n 1}))
+
+        (is (= sc-case2-1
+               {:kernel {:c1 30 :c2	20 :c3 20 :c4	16 :c5 10}
+                :price 42
+                :k 1 :n 2}))
+        (is (= sc-case2-2
+               {:kernel {:c1 29 :c2	20 :c3 20 :c4	16 :c5 10}
+                :price 42
+                :k 2 :n 3}))
+        (is (= sc-case2-3
+               {:kernel {:c1 30 :c2	20 :c3 20 :c4	15 :c5 10}
+                :price 43
+                :k 1 :n 2}))
+        (is (= sc-case2-4
+               {:kernel {:c1 18 :c2	18 :c3 18 :c4	18 :c5 10}
+                :price 56
+                :k 0 :n 5}))
+
+        (is (= sc-case3-1
+               {:kernel {:c1 30 :c3 20 :c4 1 :c5 2}
+                :price 47
+                :k 0 :n 3})))))
+
 
 ;;; test grouping
 
@@ -190,4 +306,5 @@
   "Explicit definition of tests in the namespace."
   []
   (build-test)
-  (price-inc-test))
+  (price-inc-test)
+  (rebuild-test))

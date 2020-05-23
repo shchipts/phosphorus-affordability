@@ -159,6 +159,21 @@
                 :price 55
                 :k 0 :n 2})))))
 
+(deftest one-element-demand-set-with-full-capacity
+  (testing "with one-element demand set and maximum possible imports at market price"
+    (
+      ; Act
+      let [sc (build {:supply {:c1 5 :c2 4 :c3 7}
+                      :demand 9
+                      :entry {:c1 4 :c2 9 :c3 5}
+                      :total-demand 20})]
+
+        ; Assert
+        (is (= sc
+               {:kernel {:c1 5 :c3 4}
+                :price 9
+                :k 0 :n 2})))))
+
 (deftest price-inc-test
   (testing "Estimate auction price increment from single market data"
     (
@@ -297,7 +312,8 @@
     (build-without-capacity-hit)
     (build-with-capacity-hit)
     (build-only-home-supply)
-    (include-only-importers-selling-to-market)))
+    (include-only-importers-selling-to-market)
+    (one-element-demand-set-with-full-capacity)))
 
 
 ;;; tests in the namespace

@@ -22,8 +22,10 @@
                        (reduce-kv (fn[m k v]
                                     (assoc m
                                       k
-                                      (if (< (get-in % [:kernel k]) v)
-                                        1 0)))
+                                      (let [x (get-in % [:kernel k])]
+                                        (if (and (not (nil? x))
+                                                 (< x v))
+                                          1 0))))
                                   {}
                                   supply))
                     demand-correspondences)]

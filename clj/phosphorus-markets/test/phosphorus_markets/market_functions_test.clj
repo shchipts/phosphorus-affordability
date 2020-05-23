@@ -129,3 +129,49 @@
         (is (= set8 [:c1 :c2 :c4]))
         (is (= set9 [:c2 :c4]))
         (is (= set10 [])))))
+
+(deftest no-market-entry-test
+  (testing "Check whether WE can be constructed:"
+    (
+      ; Act
+      let [table1 (we-conditions '({:kernel {:c1 6 :c2 4}
+                                    :k 2 :n 3}
+                                   {:kernel {:c1 2 :c2 3 :c3 1}
+                                    :k 1 :n 3})
+                                 {:c1 7 :c2 5 :c3 2})
+           table2 (we-conditions '({:kernel {:c1 5 :c3 4}
+                                    :k 0 :n 2}
+                                   {:kernel {:c1 4 :c2 4 :c3 2}
+                                    :k 1 :n 3})
+                                 {:c1 5 :c2 4 :c3 7})
+           set1 (excess-demand-set '({:kernel {:c1 5 :c3 4}
+                                      :k 0 :n 2}
+                                     {:kernel {:c1 4 :c2 4 :c3 2}
+                                      :k 1 :n 3})
+                                   {:c1 5 :c2 4 :c3 7})
+           set2 (excess-demand-set '({:kernel {}
+                                      :k 0 :n 1}
+                                     {:kernel {}
+                                      :k 0 :n 1})
+                                   {:c1 7 :c2 5 :c3 2})]
+
+        ; Assert
+        (is (= table1
+               {[:c1] 1
+                [:c2] 2
+                [:c3] -1
+                [:c1 :c2] 4
+                [:c1 :c3] 0
+                [:c2 :c3] 1
+                [:c1 :c2 :c3] 4}))
+        (is (= table2
+               {[:c1] 4
+                [:c2] 0
+                [:c3] -1
+                [:c1 :c2] 4
+                [:c1 :c3] 3
+                [:c2 :c3] -1
+                [:c1 :c2 :c3] 3}))
+        (is (= set1 [:c1]))
+        (is (= set2 [])))))
+

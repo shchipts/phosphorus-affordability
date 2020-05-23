@@ -68,6 +68,16 @@
     home
     (:total-demand market-parameters)))
 
+(defn- construct
+  "Constructs demand correspondence from parameters."
+  ([total-demand]
+   (construct 0 1 total-demand {}))
+  ([k n price kernel]
+   (hash-map :k k
+             :n n
+             :kernel kernel
+             :price price)))
+
 (defn build
   "Builds correspondence between optimal import bundles and market price.
   Arguments to this function must include parameters of import supply curves,
@@ -108,23 +118,21 @@
                        ((fn[kp]
                           (let [next-price (->> (count active)
                                                 (mod (- demand v))
-                                                (#(if (> % 0) (inc kp) kp)))
-                                next-k (- demand (aggregate kp))]
+                                                (#(if (> % 0) (inc kp) kp)))]
                             (->> (dissoc fns home)
                                  (filter (fn[[_ f]](> (f next-price) 0)))
                                  (into {})
                                  (reduce-kv #(assoc %1 %2 (%3 kp))
                                             {})
-                                 (hash-map :price next-price
-                                           :k next-k
-                                           :n (count (filter #(< (get entry_ %)
-                                                                 next-price)
-                                                             active))
-                                           :kernel))))))))))
-        (hash-map :k 0
-                  :n 1
-                  :kernel {}
-                  :price total-demand)))))
+                                 (construct (- demand (aggregate kp))
+                                            (->> (keys fns)
+                                                 (filter #(>= (get exit_ %)
+                                                              next-price))
+                                                 (filter #(< (get entry_ %)
+                                                             next-price))
+                                                 count)
+                                            next-price))))))))))
+        (construct total-demand)))))
 
 (defn price-inc
   "Measures price increment for next iteration in English auction

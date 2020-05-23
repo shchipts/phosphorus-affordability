@@ -4,5 +4,6 @@ pom.xml.asc
 *.class
 *.lein-*
 *.nrepl-port
+*.eastwood
 bin/
 target/

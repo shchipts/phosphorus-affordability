@@ -1,6 +1,6 @@
-;   Copyright (c) 2020 International Institute for Applied Systems Analysis. All rights reserved.
-;   The use and distribution terms for this software are covered by the
-;   MIT License (http://opensource.org/licenses/MIT)
+;   Copyright (c) 2020 International Institute for Applied Systems Analysis.
+;   All rights reserved. The use and distribution terms for this software
+;   are covered by the MIT License (http://opensource.org/licenses/MIT)
 ;   which can be found in the file LICENSE at the root of this distribution.
 ;   By using this software in any fashion, you are agreeing to be bound by
 ;   the terms of this license.
@@ -8,10 +8,9 @@
 
 (ns ^{:doc "Generalized English auction."
       :author "Anna Shchiptsova"}
-  phosphorus-markets.auction
+ phosphorus-markets.auction
   (:require [phosphorus-markets.demand-correspondence :as dp]
             [phosphorus-markets.market-functions :as mf]))
-
 
 (defn- record-iterations
   "Appends current prices to accumulated results."
@@ -36,7 +35,7 @@
          (into [])))
     ([prev supply demand-sets incs]
      (->> (keys supply)
-          (map (fn[k]
+          (map (fn [k]
                  (if (nil? (get incs k))
                    0 (get incs k))))
           (list (take m prev))
@@ -84,17 +83,17 @@
   (let [increments (->> (map #(dp/price-inc excess-demand %1 %2)
                              prev-markets
                              prev-demand-sets)
-                        (reduce (fn[s x](if (> x s) x s)) 1)
+                        (reduce (fn [s x] (if (> x s) x s)) 1)
                         repeat
                         (zipmap excess-demand))]
-    (->> (map (fn[pars]
+    (->> (map (fn [pars]
                 (update pars
                         :entry
                         #(merge-with + % increments)))
               prev-markets)
          ((juxt identity
                 #(map dp/rebuild % prev-demand-sets)))
-         ((fn[[cur-markets cur-demand-sets]]
+         ((fn [[cur-markets cur-demand-sets]]
             (iteratef cur-markets
                       iterations
                       increments
@@ -109,22 +108,21 @@
              :markets]
             ((juxt #(% iterations
                        supply
-                       (fn[v1 v2]
-                         ((fnil (fn[x](+ x v2)) 0) (last v1))))
+                       (fn [v1 v2]
+                         ((fnil (fn [x] (+ x v2)) 0) (last v1))))
                    #(% (drop (count supply) iterations)
                        demand
-                       (fn[_ v2](identity v2))))
-             (fn[coll kv f]
+                       (fn [_ v2] (identity v2))))
+             (fn [coll kv f]
                (->> (count demand)
                     (+ (count supply))
                     (#(partition (count kv) % coll))
-                    (reduce
-                      (fn[all batch]
-                        (map (fn[v1 v2]
-                               (conj v1 (f v1 v2)))
-                             all
-                             batch))
-                      (repeat (count kv) []))
+                    (reduce (fn [all batch]
+                              (map (fn [v1 v2]
+                                     (conj v1 (f v1 v2)))
+                                   all
+                                   batch))
+                            (repeat (count kv) []))
                     (zipmap (keys kv))))))))
 
 (defn- aggregate
@@ -136,8 +134,8 @@
                   #(take n (drop m %))
                   #(take-last n %))
             iterations)
-           (map #(into [] %))
-           ((fn[[v1 v2 v3]] [v1 v2 (map - v2 v3)]))
+           (map vec)
+           ((fn [[v1 v2 v3]] [v1 v2 (map - v2 v3)]))
            (map #(zipmap (keys %1) %2)
                 [supply demand demand])
            (zipmap [:imports
@@ -178,7 +176,7 @@
      (->> (vals demand)
           (apply +)
           repeat
-          (map (fn[& args]
+          (map (fn [& args]
                  (zipmap [:demand
                           :entry
                           :supply
@@ -189,7 +187,7 @@
                (repeat supply))
           iteratef
           (iterate #(market-balance % iteratef))
-          (drop-while #(not (empty? (:excess-demand %))))
+          (drop-while #(seq (:excess-demand %)))
           first
           :iterations
           transformf))))

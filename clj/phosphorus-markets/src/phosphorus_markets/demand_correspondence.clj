@@ -1,6 +1,6 @@
-;   Copyright (c) 2020 International Institute for Applied Systems Analysis. All rights reserved.
-;   The use and distribution terms for this software are covered by the
-;   MIT License (http://opensource.org/licenses/MIT)
+;   Copyright (c) 2020 International Institute for Applied Systems Analysis.
+;   All rights reserved. The use and distribution terms for this software
+;   are covered by the MIT License (http://opensource.org/licenses/MIT)
 ;   which can be found in the file LICENSE at the root of this distribution.
 ;   By using this software in any fashion, you are agreeing to be bound by
 ;   the terms of this license.
@@ -8,8 +8,7 @@
 
 (ns ^{:doc "Demand correspondence for an individual market."
       :author "Anna Shchiptsova"}
-  phosphorus-markets.demand-correspondence)
-
+ phosphorus-markets.demand-correspondence)
 
 (def ^:private home
   "Identifier for domestic industry supply."
@@ -20,15 +19,14 @@
   [{entry :entry
     demand :demand
     total-demand :total-demand}]
-  (assoc
-    entry
-    home
-    (- total-demand demand)))
+  (assoc entry
+         home
+         (- total-demand demand)))
 
 (defn- demand-fn
   "Returns supply function."
   [entry exit]
-  (fn[price]
+  (fn [price]
     (cond
       (<= price entry) 0
       (> price exit) (- exit entry)
@@ -39,7 +37,7 @@
   [entry exit]
   (->> (keys entry)
        ((juxt identity
-              (fn[ks]
+              (fn [ks]
                 (map #(demand-fn (get entry %)
                                  (get exit %))
                      ks))))
@@ -50,7 +48,7 @@
   [{supply :supply
     entry :entry
     total-demand :total-demand}]
-  (reduce-kv (fn[m k v]
+  (reduce-kv (fn [m k v]
                (->> (get entry k)
                     (+ v)
                     (#(if (> % total-demand)
@@ -65,8 +63,8 @@
   domestic insdustry."
   [market-parameters]
   (assoc (exit market-parameters)
-    home
-    (:total-demand market-parameters)))
+         home
+         (:total-demand market-parameters)))
 
 (defn- construct
   "Constructs demand correspondence from parameters."
@@ -94,45 +92,46 @@
          entry_ (entry-with-home market-parameters)
          fns (demand-fns entry_ exit_)
          aggregate #(->> (vals fns)
-                         (map (fn[f](f %)))
+                         (map (fn [f]
+                                (f %)))
                          (apply +))]
-      (if (->> (vals entry)
-               (filter #(< % total-demand))
-               not-empty)
-        (->> (vals entry_)
-             (concat (vals exit_))
-             (filter #(not (< % price)))
-             (#(conj % price))
-             distinct
-             sort
-             (map #(vector % (aggregate %)))
-             (filter #(<= (second %) demand))
-             last
-             ((fn[[p v]]
-                (let [active (->> (keys fns)
-                                  (filter #(> (get exit_ %) p))
-                                  (filter #(<= (get entry_ %) p)))]
-                  (->> (count active)
-                       (quot (- demand v))
-                       (+ p)
-                       ((fn[kp]
-                          (let [next-price (->> (count active)
-                                                (mod (- demand v))
-                                                (#(if (> % 0) (inc kp) kp)))]
-                            (->> (dissoc fns home)
-                                 (filter (fn[[_ f]](> (f next-price) 0)))
-                                 (into {})
-                                 (reduce-kv #(assoc %1 %2 (%3 kp))
-                                            {})
-                                 (construct (- demand (aggregate kp))
-                                            (->> (keys fns)
-                                                 (filter #(>= (get exit_ %)
-                                                              next-price))
-                                                 (filter #(< (get entry_ %)
+     (if (->> (vals entry)
+              (filter #(< % total-demand))
+              not-empty)
+       (->> (vals entry_)
+            (concat (vals exit_))
+            (filter #(not (< % price)))
+            (#(conj % price))
+            distinct
+            sort
+            (map #(vector % (aggregate %)))
+            (filter #(<= (second %) demand))
+            last
+            ((fn [[p v]]
+               (let [active (->> (keys fns)
+                                 (filter #(> (get exit_ %) p))
+                                 (filter #(<= (get entry_ %) p)))]
+                 (->> (count active)
+                      (quot (- demand v))
+                      (+ p)
+                      ((fn [kp]
+                         (let [next-price (->> (count active)
+                                               (mod (- demand v))
+                                               (#(if (pos? %) (inc kp) kp)))]
+                           (->> (dissoc fns home)
+                                (filter (fn [[_ f]] (pos? (f next-price))))
+                                (into {})
+                                (reduce-kv #(assoc %1 %2 (%3 kp))
+                                           {})
+                                (construct (- demand (aggregate kp))
+                                           (->> (keys fns)
+                                                (filter #(>= (get exit_ %)
                                                              next-price))
-                                                 count)
-                                            next-price))))))))))
-        (construct total-demand)))))
+                                                (filter #(< (get entry_ %)
+                                                            next-price))
+                                                count)
+                                           next-price))))))))))
+       (construct total-demand)))))
 
 (defn price-inc
   "Measures price increment for next iteration in English auction
@@ -142,7 +141,7 @@
   [ids {entry :entry :as market-parameters} {p :price}]
   (let [exit (exit market-parameters)]
     (->> (filter #(< (get entry %) p) ids)
-         (map #(let[v (get exit %)]
+         (map #(let [v (get exit %)]
                  (if (< v p) (- p v) 1)))
          sort
          first)))

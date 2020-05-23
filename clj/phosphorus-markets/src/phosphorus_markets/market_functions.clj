@@ -1,6 +1,6 @@
-;   Copyright (c) 2020 International Institute for Applied Systems Analysis. All rights reserved.
-;   The use and distribution terms for this software are covered by the
-;   MIT License (http://opensource.org/licenses/MIT)
+;   Copyright (c) 2020 International Institute for Applied Systems Analysis.
+;   All rights reserved. The use and distribution terms for this software
+;   are covered by the MIT License (http://opensource.org/licenses/MIT)
 ;   which can be found in the file LICENSE at the root of this distribution.
 ;   By using this software in any fashion, you are agreeing to be bound by
 ;   the terms of this license.
@@ -8,9 +8,8 @@
 
 (ns ^{:doc "Supply and demand correspondence for imports on multiple markets."
       :author "Anna Shchiptsova"}
-  phosphorus-markets.market-functions
+ phosphorus-markets.market-functions
   (:require [clojure.math.combinatorics :as combinatorics]))
-
 
 (defn- residual-demand-fn
   "Returns a function that determines how many items are minimally
@@ -18,20 +17,20 @@
   optimal import bundle."
   [demand-correspondences supply]
   (let [active (map #(assoc (select-keys % [:k :n])
-                       :kernel
-                       (reduce-kv (fn[m k v]
-                                    (assoc m
-                                      k
-                                      (let [x (get-in % [:kernel k])]
-                                        (if (and (not (nil? x))
-                                                 (< x v))
-                                          1 0))))
-                                  {}
-                                  supply))
+                            :kernel
+                            (reduce-kv (fn [m k v]
+                                         (assoc m
+                                                k
+                                                (let [x (get-in % [:kernel k])]
+                                                  (if (and (not (nil? x))
+                                                           (< x v))
+                                                    1 0))))
+                                       {}
+                                       supply))
                     demand-correspondences)]
-    (fn[subset]
+    (fn [subset]
       (apply +
-             (map (fn[dp]
+             (map (fn [dp]
                     (let [items (get dp :kernel)]
                       (-> (reduce #(+ %1 (get items %2))
                                   0
@@ -40,7 +39,6 @@
                           (- (get dp :n))
                           (max 0))))
                   active)))))
-
 
 (defn we-conditions
   "Checks necessary conditions for prices to be a Walrasian equilibrium
@@ -53,8 +51,8 @@
   (let [values (-> (keys supply)
                    (zipmap (repeat 0))
                    transient
-                   (#(reduce (fn[seed d]
-                               (reduce-kv (fn[m k v]
+                   (#(reduce (fn [seed d]
+                               (reduce-kv (fn [m k v]
                                             (assoc! m k (+ v (get m k))))
                                           seed
                                           (:kernel d)))
@@ -65,8 +63,8 @@
     (->> (keys supply)
          combinatorics/subsets
          (drop 1)
-         (reduce (fn[coll subset]
-                   (->> (map (fn[id]
+         (reduce (fn [coll subset]
+                   (->> (map (fn [id]
                                (- (get values id)
                                   (get supply id)))
                              subset)
@@ -78,14 +76,14 @@
 
 (defn excess-demand-set
   "Derives excess demand set based on markets' demand for imports in an
-  iteration of English auction. Returns a vector with identifiers of overdemanded
-  importers. Arguments to this function must include a list of hash maps
-  characterizing demand orrespondence of individual market, and a hash map with
-  importers' supply constraints."
+  iteration of English auction. Returns a vector with identifiers of
+  overdemanded importers. Arguments to this function must include a list
+  of hash maps characterizing demand orrespondence of individual market,
+  and a hash map with importers' supply constraints."
   [demand-correspondences supply]
   (->> (we-conditions demand-correspondences
                       supply)
-       (reduce-kv (fn[m k v]
+       (reduce-kv (fn [m k v]
                     (cond
                       (> v (first m)) [v [k]]
                       (and (= v (first m))

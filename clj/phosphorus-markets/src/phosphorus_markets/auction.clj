@@ -31,19 +31,18 @@
     ([demand-sets]
      (-> (+ m n)
          (repeat 0)
-         (concat (map :price demand-sets))
-         (into [])))
+         (concat (map :price demand-sets))))
     ([prev supply demand-sets incs]
      (->> (keys supply)
-          (map (fn [k]
-                 (if (nil? (get incs k))
-                   0 (get incs k))))
-          (list (take m prev))
-          (apply map +)
-          (#(concat %
-                    (map :price demand-sets)
-                    (take-last n prev)))
-          (into [])))))
+          (mapv (fn[v1 v2]
+                  (+ v1
+                     (if (nil? (get incs v2))
+                       0 (get incs v2))))
+                (take m prev))
+          (#(reduce (fn [s x] (conj s x))
+                    %
+                    (concat (map :price demand-sets)
+                            (take-last n prev))))))))
 
 (defn- iteration
   "Returns auction state."

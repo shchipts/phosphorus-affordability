@@ -29,16 +29,17 @@
                                        supply))
                     demand-correspondences)]
     (fn [subset]
-      (apply +
-             (map (fn [dp]
-                    (let [items (get dp :kernel)]
-                      (-> (reduce #(+ %1 (get items %2))
-                                  0
-                                  subset)
-                          (+ (get dp :k))
-                          (- (get dp :n))
-                          (max 0))))
-                  active)))))
+      (reduce (fn[s dp]
+                (let [items (get dp :kernel)]
+                  (-> (reduce #(+ %1 (get items %2))
+                              0
+                              subset)
+                      (+ (get dp :k))
+                      (- (get dp :n))
+                      (max 0)
+                      (+ s))))
+              0
+              active))))
 
 (defn we-conditions
   "Checks necessary conditions for prices to be a Walrasian equilibrium

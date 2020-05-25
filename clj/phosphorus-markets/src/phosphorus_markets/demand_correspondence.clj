@@ -104,9 +104,9 @@
             (take-while #(<= (second %) demand))
             last
             ((fn [[p v]]
-               (let [fquery (let [active (->> (keys fns)
-                                              (filter #(> (get exit_ %) p))
-                                              (filter #(<= (get entry_ %) p)))]
+               (let [fquery (let [active (filter #(and (> (get exit_ %) p)
+                                                       (<= (get entry_ %) p))
+                                                 (keys fns))]
                               (fn [f] (f (- demand v) (count active))))
                      kp (+ (fquery quot) p)
                      next-price (if (pos? (fquery mod)) (inc kp) kp)]
@@ -117,10 +117,10 @@
                                  {})
                       (construct (- demand (aggregate kp))
                                  (->> (keys fns)
-                                      (filter #(>= (get exit_ %)
-                                                   next-price))
-                                      (filter #(< (get entry_ %)
-                                                  next-price))
+                                      (filter #(and (>= (get exit_ %)
+                                                        next-price)
+                                                    (< (get entry_ %)
+                                                       next-price)))
                                       count)
                                  next-price))))))
        (construct total-demand)))))

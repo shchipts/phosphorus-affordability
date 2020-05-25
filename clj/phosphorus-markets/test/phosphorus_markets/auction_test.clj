@@ -129,6 +129,38 @@
               :markets {:m1 14 :m2 16 :m3 14}
               :surplus {:m1 1 :m2 1 :m3 1}})))))
 
+(deftest no-imports
+  (testing "with non-competitive imports"
+    (; Act
+     let [auction (run {:c1 4 :c2 2 :c3 5 :c4 3}
+                       {:m1 7 :m2 4 :m3 6}
+                       {:m1 {:c1 9 :c2 8 :c3 12 :c4 11}
+                        :m2 {:c1 16 :c2 15 :c3 17 :c4 17}
+                        :m3 {:c1 6 :c2 7 :c3 14 :c4 13}})]
+
+      ; Assert
+      (is (= auction
+             {:imports {:c1 3 :c2 4 :c3 0 :c4 0}
+              :markets {:m1 13 :m2 17 :m3 13}
+              :surplus {:m1 1 :m2 1 :m3 2}})))))
+
+(deftest minimum-price-increase
+  (testing "with the smallest price increase from all markets"
+    (; Act
+     let [auction (run {:c1 3 :c2 4 :c3 1}
+                       {:m1 9 :m2 11}
+                       {:m1 {:c1 2 :c2 1 :c3 3}
+                        :m2 {:c1 1 :c2 0 :c3 2}}
+                       :sequence)]
+
+      ; Assert
+      (is (= auction
+             {:imports {:c1 [0 7 8 9 10 11 12 13]
+                        :c2 [0 7 8 9 10 11 12 13]
+                        :c3 [0 7 8 9 10 11 12 13]}
+              :markets {:m1 [12 12 13 14 14 15 16 17]
+                        :m2 [12 12 12 13 14 14 15 16]}})))))
+
 
 ;;; test grouping
 
@@ -136,7 +168,9 @@
 (deftest run-test
   (testing "Run English auction:\n"
     (iterations)
-    (surpluses)))
+    (surpluses)
+    (no-imports)
+    (minimum-price-increase)))
 
 
 ;;; tests in the namespace

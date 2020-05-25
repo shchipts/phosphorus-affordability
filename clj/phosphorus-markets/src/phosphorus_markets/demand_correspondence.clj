@@ -10,17 +10,13 @@
       :author "Anna Shchiptsova"}
  phosphorus-markets.demand-correspondence)
 
-(def ^:private home
-  "Identifier for domestic industry supply."
-  :home)
-
 (defn- entry-with-home
   "Appends domestic industry supply to imports."
   [{entry :entry
     demand :demand
     total-demand :total-demand}]
   (assoc entry
-         home
+         :home
          (- total-demand demand)))
 
 (defn- demand-fn
@@ -63,7 +59,7 @@
   domestic insdustry."
   [market-parameters]
   (assoc (exit market-parameters)
-         home
+         :home
          (:total-demand market-parameters)))
 
 (defn- construct
@@ -105,32 +101,28 @@
             distinct
             sort
             (map #(vector % (aggregate %)))
-            (filter #(<= (second %) demand))
+            (take-while #(<= (second %) demand))
             last
             ((fn [[p v]]
-               (let [active (->> (keys fns)
-                                 (filter #(> (get exit_ %) p))
-                                 (filter #(<= (get entry_ %) p)))]
-                 (->> (count active)
-                      (quot (- demand v))
-                      (+ p)
-                      ((fn [kp]
-                         (let [next-price (->> (count active)
-                                               (mod (- demand v))
-                                               (#(if (pos? %) (inc kp) kp)))]
-                           (->> (dissoc fns home)
-                                (filter (fn [[_ f]] (pos? (f next-price))))
-                                (into {})
-                                (reduce-kv #(assoc %1 %2 (%3 kp))
-                                           {})
-                                (construct (- demand (aggregate kp))
-                                           (->> (keys fns)
-                                                (filter #(>= (get exit_ %)
-                                                             next-price))
-                                                (filter #(< (get entry_ %)
-                                                            next-price))
-                                                count)
-                                           next-price))))))))))
+               (let [fquery (let [active (->> (keys fns)
+                                              (filter #(> (get exit_ %) p))
+                                              (filter #(<= (get entry_ %) p)))]
+                              (fn [f] (f (- demand v) (count active))))
+                     kp (+ (fquery quot) p)
+                     next-price (if (pos? (fquery mod)) (inc kp) kp)]
+                 (->> (dissoc fns :home)
+                      (filter (fn [[_ f]] (pos? (f next-price))))
+                      (into {})
+                      (reduce-kv #(assoc %1 %2 (%3 kp))
+                                 {})
+                      (construct (- demand (aggregate kp))
+                                 (->> (keys fns)
+                                      (filter #(>= (get exit_ %)
+                                                   next-price))
+                                      (filter #(< (get entry_ %)
+                                                  next-price))
+                                      count)
+                                 next-price))))))
        (construct total-demand)))))
 
 (defn price-inc
@@ -140,11 +132,15 @@
   current market price."
   [ids {entry :entry :as market-parameters} {p :price}]
   (let [exit (exit market-parameters)]
-    (->> (filter #(< (get entry %) p) ids)
-         (map #(let [v (get exit %)]
-                 (if (< v p) (- p v) 1)))
-         sort
-         first)))
+    (reduce #(let [x (if (< (get exit %2) p)
+                       (- p (get exit %2)) 1)]
+               (cond
+                 (= x 1) (reduced 1)
+                 (nil? %1) x
+                 (< x %1) x
+                 :else %1))
+            nil
+            (filter #(< (get entry %) p) ids))))
 
 (defn rebuild
   "Rebuilds correspondence between optimal import bundles and market price

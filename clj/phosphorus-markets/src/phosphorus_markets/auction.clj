@@ -83,7 +83,8 @@
   (let [increments (->> (map #(dp/price-inc excess-demand %1 %2)
                              prev-markets
                              prev-demand-sets)
-                        (reduce (fn [s x] (if (> x s) x s)) 1)
+                        (filter some?)
+                        (reduce (fn [s x] (if (< x s) x s)))
                         repeat
                         (zipmap excess-demand))]
     (->> (map (fn [pars]

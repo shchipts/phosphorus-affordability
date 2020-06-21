@@ -25,7 +25,7 @@
   "Command line options."
   [["-k" "--number-of-chunks K" "Chunk auctions into K-sized slices"
     :id :k
-    :default 2
+    :default 10
     :parse-fn #(Integer/parseInt %)]
    ["-s" "--save PATH" "PATH to folder for output writing"
     :id :save

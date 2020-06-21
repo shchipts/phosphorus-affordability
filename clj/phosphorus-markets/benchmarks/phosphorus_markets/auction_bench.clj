@@ -80,4 +80,4 @@
   "Benchmarking generalized English auction."
   []
   ()
-  (doall (repeatedly 3 #(auction/run supply demand entry :summary))))
+  (auction/run supply demand entry :summary))

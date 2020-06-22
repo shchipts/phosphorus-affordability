@@ -25,13 +25,15 @@
 (defn- iterations
   "Combines results of separate auction runs."
   [i coll size]
-  (reduce-kv (fn [m j [_ v]]
+  (reduce-kv (fn [m j [k v]]
                (merge-with concat
                            m
-                           (record v
-                                   i
-                                   (inc j)
-                                   size)))
+                           (if (= k :sub-iterations)
+                             {k [v]}
+                             (record v
+                                     i
+                                     (inc j)
+                                     size))))
              {}
              (vec coll)))
 

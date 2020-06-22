@@ -9,7 +9,7 @@
                  [org.clojure/math.combinatorics "0.1.6"]
                  [org.clojure/math.numeric-tower "0.0.4"]
                  [org.iiasa/utilities-clj "1.2.0-SNAPSHOT"]
-                 [org.iiasa/commodities-auction "0.2.0-SNAPSHOT"]]
+                 [org.iiasa/commodities-auction "0.2.1-SNAPSHOT"]]
   :main ^:skip-aot phosphorus-markets.core
   :jvm-opts ^:replace ["-server" "-Xmx2g"]
   :eval-in-leiningen true)

@@ -58,7 +58,9 @@
       (time
        (->> (reader/load-edn pars)
             (#(provider/from % reader/read-csv))
-            (#(sim/prun % options))
+            ((fn [coll]
+               (println (str "Total number of auctions: " (count coll)))
+               (sim/prun coll options)))
             (map-indexed #(do
                             (doseq [m %2]
                               (apply write options m))
@@ -67,4 +69,8 @@
                                           " of "
                                           (:k options)
                                           " auctions executed."))))
-            doall)))}))
+            doall
+            ((fn [_]
+               (println (str "Results saved to: \""
+                             (:save options)
+                             "\"")))))))}))

@@ -10,6 +10,7 @@
       :author "Anna Shchiptsova"}
  phosphorus-markets.provider
   (:require [clojure.edn :as edn]
+            [clojure.set :as s]
             [utilities-clj.format :as formatter]))
 
 (defn- to-line
@@ -58,7 +59,9 @@
   (let [first-ids [:iteration :simulation]]
     (->> (keys m)
          (filter (comp not (set first-ids)))
-         (#(into % first-ids))
+         (#(if (s/subset? (set first-ids) (set (keys m)))
+             (into % first-ids)
+             %))
          ((juxt (fn [sorted-keys]
                   (apply map
                          #(to-line %&)

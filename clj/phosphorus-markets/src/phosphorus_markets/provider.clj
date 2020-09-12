@@ -38,7 +38,8 @@
   "Converts file content with market parameters to model data."
   [{supply :supply
     demand :demand
-    entry :entry}
+    entry :entry
+    names :markets}
    readf]
   (->> (vals entry)
        (into [supply demand])
@@ -47,7 +48,9 @@
        ((juxt (comp vec first)
               #(apply map
                       (fn [& coll]
-                        (zipmap (keys entry)
+                        (zipmap (map (fn [k]
+                                       (keyword (get names k)))
+                                     (keys entry))
                                 coll))
                       (second %))))
        (apply conj)
@@ -67,5 +70,5 @@
                          #(to-line %&)
                          (map #(get m %)
                               sorted-keys)))
-                #(to-line (map name %))))
+                #(to-line (map (comp str symbol) %))))
          (apply conj))))

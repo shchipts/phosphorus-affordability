@@ -1,0 +1,52 @@
+************************************
+GENERAL INFORMATION
+
+Description: This compilation provides records on the DAP/MAP fertilizer consumption estimated from the IFA Supply Database.
+Author: Anna Shchiptsova
+Generated: 2020-02-12 
+Files: 'ifa supply db regional consumption.csv'
+
+************************************
+REMARKS
+
+For the purpose of this document, the following definitions apply:
+DAP - diammonium phosphate,
+MAP - monoammonium phosphate.
+
+This compilation covers the period from 2013 to 2017.
+Countries are reported by ISO 3166 country code.
+
+Metric tonnes of P2O5 per annum are used for volumes throughout this compilation.
+Original data values are recorded in metric tonnes of product.
+The following conversion factors of product to P2O5 tonnes were applied:
+DAP		0.46
+MAP		0.52
+
+************************************
+DATA STRUCTURE
+
+Year: year of operations
+Africa: consumption in countries
+	AGO, BDI, BEN, BFA, CAF, CIV, CMR, COD, COG, DJI, DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNQ, KEN, LBR, LBY, MAR, MDG, MLI, MOZ, MRT, MUS, MWI, NAM, NER, NGA, RWA, SDN, SEN, SLE, SOM, SWZ, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE
+East Asia: consumption in countries
+	CHN, BRN, IDN, JPN, KHM, KOR, LAO, MMR, MNG, MYS, PHL, PRK, SGP, THA, TLS, VNM
+Eastern Europe and Central Asia: consumption in countries
+	ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM, UKR, UZB
+Latin America: consumption in countries
+	ARG, ATG, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, GRD, GTM, GUY, HND, HTI, JAM, KNA, LCA, MEX, NIC, PAN, PER, PRY, SLV, SUR, TCA, TTO, URY, VCT, VEN
+North America: consumption in countries
+	CAN, USA
+Oceania: consumption in countries
+	AUS, FJI, NCL, NRU, NZL, PLW, PNG, PYF, SLB
+South Asia: consumption in countries
+	BGD, IND, LKA, NPL, PAK
+Western and Central Europe: consumption in countries
+	ALB, AUT, BEL, BGR, BIH, CHE, CZE, DEU, DNK, ESP, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ISL, ITA, LUX, MKD, MNE, NLD, NOR, POL, PRT, ROU, SRB, SVK, SVN, SWE
+Western Asia: consumption in countries
+	AFG, ARE, BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, TUR, YEM
+
+************************************
+REFERENCES
+
+IFA Supply Database, accessed from https://www.ifastat.org/supply/Phosphate%20Products/Processed%20Phosphates
+

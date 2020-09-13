@@ -1,0 +1,15 @@
+Package: dapmap.markets
+Type: Package
+Title: DAP/MAP trade volumes 2013-2017
+Version: 1.0.0
+Author: Anna Shchiptsova [aut, cre],
+  International Institute for Applied Systems Analysis [cph]
+Maintainer: Anna Shchiptsova <anna.shchiptsova1@gmail.com>
+Description: This compilation provides records on the regional DAP/MAP fertilizer trade volumes
+	estimated from the UN Comtrade data, IFA Supply Database and data announced by global phosphate companies.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+LazyData: true
+URL: https://github.com/shchipts/phosphorus-affordability/tree/master/R/dapmap.markets
+RoxygenNote: 7.1.0

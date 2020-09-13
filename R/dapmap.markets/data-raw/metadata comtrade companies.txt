@@ -1,0 +1,67 @@
+************************************
+GENERAL INFORMATION
+
+Description: This compilation provides records on the international DAP/MAP fertilizer trade volumes estimated from the UN Comtrade data.
+Author: Anna Shchiptsova
+Generated: 2020-02-11 
+Files: 'comtrade regional sales volume.csv', 'comtrade total trade.csv'
+
+************************************
+REMARKS
+
+For the purpose of this document, the following definitions apply:
+DAP - diammonium phosphate,
+MAP - monoammonium phosphate.
+
+This compilation covers the period from 2013 to 2017.
+Countries are reported by ISO 3166 country code.
+
+This compilation covers the following companies and groups of companies:
+China (export)		Chinese exporters (comtrade entries for China)
+Maaden			Maaden (comtrade entries for Saudi Arabia)
+Mosaic			Mosaic (comtrade entries for the United States)
+PhosAgro/EuroChem	PhosAgro, EuroChem (comtrade entries for Russia, Lithunia)
+OCP			OCP (comtrade entries for Morocco)
+
+Metric tonnes of P2O5 per annum are used for trade volumes throughout this compilation.
+Original data values are recorded in kilograms.
+The following conversion factors of product to P2O5 tonnes were applied:
+DAP		0.46
+MAP		0.52
+MAP (China)	0.44
+
+************************************
+DATA STRUCTURE
+
+Exporter: company or a group of companies
+Year: year of operations
+Comtrade Reports:
+	Import		estimated trade volumes from the reported imports
+	Export		estimated trade volumes from the reported exports
+Sales Volume: total exporter's trade volume
+Africa: exporter's trade volume with countries
+	AGO, BDI, BEN, BFA, CAF, CIV, CMR, COD, COG, DJI, DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNQ, KEN, LBR, LBY, MAR, MDG, MLI, MOZ, MRT, MUS, MWI, NAM, NER, NGA, RWA, SDN, SEN, SLE, SOM, SWZ, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE
+China: exporter's trade volume with countries
+	CHN
+East Asia (excl. China): exporter's trade volume with countries
+	BRN, IDN, JPN, KHM, KOR, LAO, MMR, MNG, MYS, PHL, PRK, SGP, THA, TLS, VNM
+Eastern Europe and Central Asia: exporter's trade volume with countries
+	ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM, UKR, UZB
+Latin America: exporter's trade volume with countries
+	ARG, ATG, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, GRD, GTM, GUY, HND, HTI, JAM, KNA, LCA, MEX, NIC, PAN, PER, PRY, SLV, SUR, TCA, TTO, URY, VCT, VEN
+North America: exporter's trade volume with countries
+	CAN, USA
+Oceania: exporter's trade volume with countries
+	AUS, FJI, NCL, NRU, NZL, PLW, PNG, PYF, SLB
+South Asia: exporter's trade volume with countries
+	BGD, IND, LKA, NPL, PAK
+Western and Central Europe: exporter's trade volume with countries
+	ALB, AUT, BEL, BGR, BIH, CHE, CZE, DEU, DNK, ESP, FIN, FRA, GBR, GRC, HRV, HUN, IRL, ISL, ITA, LUX, MKD, MNE, NLD, NOR, POL, PRT, ROU, SRB, SVK, SVN, SWE
+Western Asia: exporter's trade volume with countries
+	AFG, ARE, BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, TUR, YEM
+
+************************************
+REFERENCES
+
+UN Comtrade Database, accessed from https://comtrade.un.org/
+

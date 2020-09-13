@@ -1,0 +1,39 @@
+************************************
+GENERAL INFORMATION
+
+Description: This compilation provides estimates on the DAP/MAP fertilizer sales announced by global phosphate companies.
+Author: Anna Shchiptsova
+Generated: 2020-02-11
+Files: 'companies sales.csv'
+
+************************************
+REMARKS
+
+For the purpose of this document, the following definitions apply:
+DAP - diammonium phosphate,
+MAP - monoammonium phosphate,
+NA - not applicable.
+
+This compilation covers the period from 2013 to 2017.
+
+This compilation covers the following companies and groups of companies:
+Maaden			Maaden (website: https://www.maaden.com.sa/)
+Mosaic			Mosaic (website: http://www.mosaicco.com/)
+PhosAgro/EuroChem	PhosAgro, EuroChem (website: https://phosagro.com/, https://www.eurochemgroup.com/)
+OCP			OCP (website: https://www.ocpgroup.ma/)
+
+Metric tonnes of P2O5 per annum are used for trade volumes throughout this compilation.
+Original data values are recorded in metric tonnes of product.
+The following conversion factors of product to P2O5 tonnes were applied:
+DAP		0.46
+MAP		0.52
+DAP/MAP		0.49
+
+************************************
+DATA STRUCTURE
+
+Exporter: company or a group of companies
+Year: year of operations
+Sales: total sales volume
+Exports: total exports volume
+

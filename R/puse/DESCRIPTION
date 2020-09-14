@@ -1,0 +1,16 @@
+Package: puse
+Type: Package
+Title: Estimates of P use by crop and region
+Version: 1.0.0
+Author: Anna Shchiptsova [aut, cre],
+  International Institute for Applied Systems Analysis [cph]
+Maintainer: Anna Shchiptsova <anna.shchiptsova1@gmail.com>
+Description: This compilation provides records on the regional phosphorus use by crop based on the IFA-IPNI assessment of fertilizer use 2014-2014/15. 
+	The compilation includes 
+		2007-2018 estimates for the FAOSTAT crop production data, and 
+		2030 estimates for crop production in the FAO "Business as Usual" and "Stratified Societies" scenarios.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+LazyData: true
+URL: https://github.com/shchipts/phosphorus-affordability/tree/master/R/puse

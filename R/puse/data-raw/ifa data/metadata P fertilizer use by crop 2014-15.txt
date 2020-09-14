@@ -1,0 +1,44 @@
+************************************
+GENERAL INFORMATION
+
+Description: This compilation provides records on phosphorus fertilizer use by crop
+by selected country from the IFA & IPNI assessment of fertilizer use at the global scale.
+Author: Anna Shchiptsova 
+Generated: 2020-06-03 
+Generated with: manually
+Files: 'P fertilizer use by crop 2014-15.csv'
+
+************************************
+REMARKS
+
+This compilation covers year 2014.
+This compilation covers the countries, which were selected in the IFA & IPNI report.
+This compilation divides crops into 14 groups corresponding to the groups in the IFA & IPNI report. 
+
+Metric tonnes of P2O5 per annum are used for volumes throughout this compilation.
+Original data values are recorded in thousand metric tonnes of P2O5 in the IFA & IPNI assessment of fertilizer use.
+
+************************************
+DATA STRUCTURE
+
+Country: a country or a group of 28 countries in case of the European Union
+Wheat: wheat
+Rice: rice
+Maize: maize (for grain and silage)
+Other Cereals: barley, sorghum, oats, rye, triticale, millet, etc.
+Soybean: soybean
+Oil Palm: oil palm fruit
+Other Oilseeds: rapeseed/canola, mustard, sunflower, groundnut, coconut, etc.
+Fibre Crops: cotton, flax, hemp, jute, etc.
+Sugar Crops: sugar cane and sugar beet
+Roots & Tubers: potato, cassava, sweet potato, yam, etc.
+Fruits: fruits
+Vegetables: vegetables
+Grassland: temporary and permanent grassland and pastures for hay, silage and grazing
+Residual: pulses, nut trees, rubber, cocoa, coffee, tea, tobacco, etc., as well as forestry, fish ponds, 
+ornamentals, turf, golf courses, homes, gardens, and other potential non-industrial/non-feed uses
+
+************************************
+REFERENCES
+
+IFA, & IPNI. (2017). Assessment of Fertilizer Use by Crop at the Global Level 2014-2014/15. Downloaded from https://www.ifastat.org/plant-nutrition

@@ -1,0 +1,1266 @@
+Country,Year,Consumption
+Morocco,2007,146
+Morocco,2008,111
+Morocco,2009,112
+Morocco,2010,191
+Morocco,2011,212
+Morocco,2012,215
+Morocco,2013,236
+Morocco,2014,222
+Morocco,2015,227.2
+Morocco,2016,149.9
+Morocco,2017,158.3
+Libya,2007,15
+Libya,2008,7
+Libya,2009,21.6
+Libya,2010,31
+Libya,2011,49
+Libya,2012,49.3
+Libya,2013,26.5
+Libya,2014,20.5
+Libya,2015,12
+Libya,2016,16.6
+Libya,2017,14.3
+Jordan,2007,4
+Jordan,2008,5
+Jordan,2009,6
+Jordan,2010,6
+Jordan,2011,6
+Jordan,2012,6
+Jordan,2013,6
+Jordan,2014,6
+Jordan,2015,6
+Jordan,2016,6.1
+Jordan,2017,5.8
+Pakistan,2007,629.9
+Pakistan,2008,651.3
+Pakistan,2009,860.4
+Pakistan,2010,767
+Pakistan,2011,633.2
+Pakistan,2012,746.9
+Pakistan,2013,881
+Pakistan,2014,975
+Pakistan,2015,1007.3
+Pakistan,2016,1268.9
+Pakistan,2017,1279
+Norway,2007,26
+Norway,2008,16
+Norway,2009,17
+Norway,2010,20
+Norway,2011,20
+Norway,2012,21
+Norway,2013,20.3
+Norway,2014,20.9
+Norway,2015,20.9
+Norway,2016,20.3
+Norway,2017,20.7
+Ireland,2007,61
+Ireland,2008,54
+Ireland,2009,52
+Ireland,2010,46
+Ireland,2011,102
+Ireland,2012,79.6
+Ireland,2013,83.4
+Ireland,2014,85
+Ireland,2015,89.4
+Ireland,2016,94.8
+Ireland,2017,87.5
+Argentina,2007,686.2
+Argentina,2008,482
+Argentina,2009,460.9
+Argentina,2010,613
+Argentina,2011,712
+Argentina,2012,602.7
+Argentina,2013,604
+Argentina,2014,589.5
+Argentina,2015,439.6
+Argentina,2016,757.7
+Argentina,2017,630.1
+Spain,2007,526
+Spain,2008,158
+Spain,2009,323.6
+Spain,2010,368
+Spain,2011,355
+Spain,2012,376.5
+Spain,2013,427.4
+Spain,2014,403
+Spain,2015,388
+Spain,2016,432
+Spain,2017,423
+Korea DPR,2007,50
+Korea DPR,2008,45
+Korea DPR,2009,45
+Korea DPR,2010,50
+Korea DPR,2011,50
+Korea DPR,2012,51
+Korea DPR,2013,51.8
+Korea DPR,2014,31.8
+Korea DPR,2015,24.9
+Korea DPR,2016,28.7
+Korea DPR,2017,30.2
+Trinidad and Tobago,2007,0.3
+Trinidad and Tobago,2008,0.1
+Trinidad and Tobago,2009,0.2
+Trinidad and Tobago,2010,0.1
+Trinidad and Tobago,2011,0.2
+Trinidad and Tobago,2012,0.3
+Trinidad and Tobago,2013,0.4
+Trinidad and Tobago,2014,0.5
+Trinidad and Tobago,2015,0.5
+Trinidad and Tobago,2016,0.5
+Trinidad and Tobago,2017,0.5
+Romania,2007,68.2
+Romania,2008,42
+Romania,2009,72
+Romania,2010,89
+Romania,2011,119
+Romania,2012,120
+Romania,2013,143.8
+Romania,2014,188.7
+Romania,2015,210.7
+Romania,2016,269.2
+Romania,2017,292.7
+France,2007,631.3
+France,2008,295.9
+France,2009,405.7
+France,2010,499.9
+France,2011,432.1
+France,2012,495.4
+France,2013,456
+France,2014,408.9
+France,2015,429
+France,2016,359
+France,2017,426
+Nigeria,2007,45
+Nigeria,2008,66.7
+Nigeria,2009,59.6
+Nigeria,2010,57.8
+Nigeria,2011,60
+Nigeria,2012,57.8
+Nigeria,2013,63.6
+Nigeria,2014,67.4
+Nigeria,2015,57.3
+Nigeria,2016,98.3
+Nigeria,2017,139.7
+Croatia,2007,57
+Croatia,2008,53
+Croatia,2009,29.7
+Croatia,2010,25.4
+Croatia,2011,22
+Croatia,2012,34
+Croatia,2013,33
+Croatia,2014,30
+Croatia,2015,27
+Croatia,2016,31.4
+Croatia,2017,28
+Serbia,2007,39
+Serbia,2008,18.5
+Serbia,2009,26
+Serbia,2010,28
+Serbia,2011,28
+Serbia,2012,31
+Serbia,2013,72.2
+Serbia,2014,49.8
+Serbia,2015,58.5
+Serbia,2016,72.7
+Serbia,2017,57.2
+Kuwait,2007,0
+Kuwait,2008,0
+Kuwait,2009,0
+Kuwait,2010,0
+Kuwait,2011,0
+Kuwait,2012,0
+Kuwait,2013,0.3
+Kuwait,2014,0.4
+Kuwait,2015,0.5
+Kuwait,2016,0.1
+Kuwait,2017,0
+Kazakhstan,2007,6
+Kazakhstan,2008,6
+Kazakhstan,2009,7
+Kazakhstan,2010,7.5
+Kazakhstan,2011,8
+Kazakhstan,2012,9
+Kazakhstan,2013,10
+Kazakhstan,2014,38.6
+Kazakhstan,2015,45.9
+Kazakhstan,2016,97.6
+Kazakhstan,2017,122.6
+Viet Nam,2007,636.7
+Viet Nam,2008,612.8
+Viet Nam,2009,600
+Viet Nam,2010,650
+Viet Nam,2011,680
+Viet Nam,2012,696
+Viet Nam,2013,567.8
+Viet Nam,2014,684.8
+Viet Nam,2015,805.8
+Viet Nam,2016,773.9
+Viet Nam,2017,800.9
+Kyrgyzstan,2007,0
+Kyrgyzstan,2008,0
+Kyrgyzstan,2009,0
+Kyrgyzstan,2010,0
+Kyrgyzstan,2011,0
+Kyrgyzstan,2012,0
+Kyrgyzstan,2013,0.1
+Kyrgyzstan,2014,0.1
+Kyrgyzstan,2015,0.6
+Kyrgyzstan,2016,3.5
+Kyrgyzstan,2017,6.2
+Tanzania,2007,3
+Tanzania,2008,2
+Tanzania,2009,5
+Tanzania,2010,35.8
+Tanzania,2011,23.5
+Tanzania,2012,18.7
+Tanzania,2013,39.4
+Tanzania,2014,31.1
+Tanzania,2015,29.9
+Tanzania,2016,39.4
+Tanzania,2017,38.7
+Lebanon,2007,15.6
+Lebanon,2008,18.1
+Lebanon,2009,15.8
+Lebanon,2010,16.1
+Lebanon,2011,16
+Lebanon,2012,16
+Lebanon,2013,9
+Lebanon,2014,8
+Lebanon,2015,9.6
+Lebanon,2016,10
+Lebanon,2017,12.2
+Tunisia,2007,46
+Tunisia,2008,37
+Tunisia,2009,48
+Tunisia,2010,49
+Tunisia,2011,50
+Tunisia,2012,51
+Tunisia,2013,44.6
+Tunisia,2014,41.8
+Tunisia,2015,50.6
+Tunisia,2016,47.8
+Tunisia,2017,37.6
+Qatar,2007,0
+Qatar,2008,0
+Qatar,2009,0
+Qatar,2010,0
+Qatar,2011,0
+Qatar,2012,0
+Qatar,2013,0.5
+Qatar,2014,0.5
+Qatar,2015,0.4
+Qatar,2016,0.4
+Qatar,2017,0.5
+Macedonia,2007,11
+Macedonia,2008,11
+Macedonia,2009,5
+Macedonia,2010,6
+Macedonia,2011,7
+Macedonia,2012,10
+Macedonia,2013,4.5
+Macedonia,2014,5.2
+Macedonia,2015,5.6
+Macedonia,2016,4.9
+Macedonia,2017,4.7
+Myanmar,2007,17.8
+Myanmar,2008,5.1
+Myanmar,2009,5
+Myanmar,2010,15
+Myanmar,2011,18
+Myanmar,2012,20
+Myanmar,2013,19
+Myanmar,2014,24.3
+Myanmar,2015,20.5
+Myanmar,2016,55.6
+Myanmar,2017,106.6
+Venezuela,2007,68
+Venezuela,2008,55
+Venezuela,2009,60
+Venezuela,2010,65
+Venezuela,2011,65
+Venezuela,2012,70
+Venezuela,2013,70
+Venezuela,2014,244.6
+Venezuela,2015,130
+Venezuela,2016,100.4
+Venezuela,2017,92.2
+Sri Lanka,2007,51
+Sri Lanka,2008,50
+Sri Lanka,2009,45
+Sri Lanka,2010,55
+Sri Lanka,2011,60
+Sri Lanka,2012,57
+Sri Lanka,2013,57.4
+Sri Lanka,2014,73.6
+Sri Lanka,2015,69.4
+Sri Lanka,2016,31.4
+Sri Lanka,2017,24.2
+Germany,2007,316.6
+Germany,2008,174.4
+Germany,2009,235.2
+Germany,2010,286.3
+Germany,2011,246.7
+Germany,2012,284.7
+Germany,2013,285
+Germany,2014,244.6
+Germany,2015,248.4
+Germany,2016,232
+Germany,2017,212.5
+Indonesia,2007,541
+Indonesia,2008,421.1
+Indonesia,2009,450
+Indonesia,2010,500
+Indonesia,2011,918
+Indonesia,2012,1174.8
+Indonesia,2013,1306.1
+Indonesia,2014,1187.8
+Indonesia,2015,1241.1
+Indonesia,2016,1190.8
+Indonesia,2017,1398.6
+Switzerland,2007,15.5
+Switzerland,2008,14
+Switzerland,2009,11.9
+Switzerland,2010,12.1
+Switzerland,2011,10
+Switzerland,2012,10
+Switzerland,2013,9.5
+Switzerland,2014,10
+Switzerland,2015,8.1
+Switzerland,2016,13.3
+Switzerland,2017,8.8
+Italy,2007,319
+Italy,2008,193.7
+Italy,2009,263
+Italy,2010,184
+Italy,2011,178
+Italy,2012,169
+Italy,2013,169
+Italy,2014,173
+Italy,2015,170
+Italy,2016,162
+Italy,2017,167.2
+Saudi Arabia,2007,136
+Saudi Arabia,2008,74
+Saudi Arabia,2009,70
+Saudi Arabia,2010,83
+Saudi Arabia,2011,88
+Saudi Arabia,2012,93
+Saudi Arabia,2013,94
+Saudi Arabia,2014,92
+Saudi Arabia,2015,94
+Saudi Arabia,2016,94.3
+Saudi Arabia,2017,95.3
+Cameroon,2007,9
+Cameroon,2008,8
+Cameroon,2009,8
+Cameroon,2010,10
+Cameroon,2011,12.8
+Cameroon,2012,12.5
+Cameroon,2013,7
+Cameroon,2014,6.9
+Cameroon,2015,12
+Cameroon,2016,9.6
+Cameroon,2017,8.3
+Nepal,2007,5
+Nepal,2008,8
+Nepal,2009,8.5
+Nepal,2010,15
+Nepal,2011,20
+Nepal,2012,30.2
+Nepal,2013,37.5
+Nepal,2014,46.8
+Nepal,2015,29.8
+Nepal,2016,43.7
+Nepal,2017,57.7
+Finland,2007,40
+Finland,2008,25
+Finland,2009,29
+Finland,2010,28
+Finland,2011,24
+Finland,2012,23
+Finland,2013,24.5
+Finland,2014,22
+Finland,2015,21
+Finland,2016,22
+Finland,2017,22
+Bangladesh,2007,228
+Bangladesh,2008,80
+Bangladesh,2009,299
+Bangladesh,2010,355
+Bangladesh,2011,532
+Bangladesh,2012,500.4
+Bangladesh,2013,565
+Bangladesh,2014,606.7
+Bangladesh,2015,645.7
+Bangladesh,2016,627
+Bangladesh,2017,654.6
+Zimbabwe,2007,10
+Zimbabwe,2008,9.2
+Zimbabwe,2009,9.9
+Zimbabwe,2010,15
+Zimbabwe,2011,20
+Zimbabwe,2012,20
+Zimbabwe,2013,23.7
+Zimbabwe,2014,31.4
+Zimbabwe,2015,29.6
+Zimbabwe,2016,39.3
+Zimbabwe,2017,48.4
+Greece,2007,91
+Greece,2008,64
+Greece,2009,73
+Greece,2010,75
+Greece,2011,44
+Greece,2012,58
+Greece,2013,55.1
+Greece,2014,55.1
+Greece,2015,52.1
+Greece,2016,52.6
+Greece,2017,50.3
+Ecuador,2007,36
+Ecuador,2008,15.2
+Ecuador,2009,30
+Ecuador,2010,34.6
+Ecuador,2011,41.7
+Ecuador,2012,25.3
+Ecuador,2013,38.7
+Ecuador,2014,50
+Ecuador,2015,45.8
+Ecuador,2016,46.9
+Ecuador,2017,43.3
+Iceland,2007,4.4
+Iceland,2008,2.9
+Iceland,2009,3
+Iceland,2010,3
+Iceland,2011,3.3
+Iceland,2012,3.4
+Iceland,2013,6
+Iceland,2014,7.3
+Iceland,2015,6.4
+Iceland,2016,7.4
+Iceland,2017,7.7
+Belgium and Luxemburg,2007,47
+Belgium and Luxemburg,2008,23
+Belgium and Luxemburg,2009,24
+Belgium and Luxemburg,2010,23
+Belgium and Luxemburg,2011,23
+Belgium and Luxemburg,2012,23
+Belgium and Luxemburg,2013,23
+Belgium and Luxemburg,2014,21
+Belgium and Luxemburg,2015,21
+Belgium and Luxemburg,2016,20
+Belgium and Luxemburg,2017,20
+Costa Rica,2007,21
+Costa Rica,2008,17
+Costa Rica,2009,18
+Costa Rica,2010,20
+Costa Rica,2011,22
+Costa Rica,2012,22.5
+Costa Rica,2013,22.4
+Costa Rica,2014,35
+Costa Rica,2015,21.6
+Costa Rica,2016,23.3
+Costa Rica,2017,23.8
+China,2007,10635.3
+China,2008,9408.1
+China,2009,11977.6
+China,2010,12988.3
+China,2011,13042.8
+China,2012,14105.8
+China,2013,13685.6
+China,2014,14163.1
+China,2015,13972.6
+China,2016,12681.8
+China,2017,12100.2
+"Taiwan, China",2007,61
+"Taiwan, China",2008,52
+"Taiwan, China",2009,50
+"Taiwan, China",2010,49
+"Taiwan, China",2011,47
+"Taiwan, China",2012,48
+"Taiwan, China",2013,40
+"Taiwan, China",2014,40
+"Taiwan, China",2015,42.8
+"Taiwan, China",2016,34
+"Taiwan, China",2017,35
+Iran,2007,408
+Iran,2008,385.5
+Iran,2009,349
+Iran,2010,349
+Iran,2011,170
+Iran,2012,170
+Iran,2013,124
+Iran,2014,150
+Iran,2015,100.2
+Iran,2016,69.3
+Iran,2017,162.2
+India,2007,5520.2
+India,2008,6506.2
+India,2009,7278.4
+India,2010,8049.7
+India,2011,7914.2
+India,2012,6653.4
+India,2013,5633.5
+India,2014,6098.8
+India,2015,6978.8
+India,2016,6705.4
+India,2017,6854.4
+Sudan,2007,7.4
+Sudan,2008,7
+Sudan,2009,7
+Sudan,2010,2
+Sudan,2011,3
+Sudan,2012,3
+Sudan,2013,12.5
+Sudan,2014,20
+Sudan,2015,22.5
+Sudan,2016,9
+Sudan,2017,22
+Chile,2007,151.9
+Chile,2008,107.2
+Chile,2009,107
+Chile,2010,130.5
+Chile,2011,131.8
+Chile,2012,128.8
+Chile,2013,129.5
+Chile,2014,129
+Chile,2015,124.5
+Chile,2016,125
+Chile,2017,117.3
+Colombia,2007,152
+Colombia,2008,155
+Colombia,2009,165
+Colombia,2010,165
+Colombia,2011,174.9
+Colombia,2012,209
+Colombia,2013,208.5
+Colombia,2014,227.6
+Colombia,2015,212.6
+Colombia,2016,217.7
+Colombia,2017,218.1
+Côte d'Ivoire,2007,20
+Côte d'Ivoire,2008,10
+Côte d'Ivoire,2009,10
+Côte d'Ivoire,2010,26
+Côte d'Ivoire,2011,11.2
+Côte d'Ivoire,2012,15.6
+Côte d'Ivoire,2013,32.8
+Côte d'Ivoire,2014,37.1
+Côte d'Ivoire,2015,41.1
+Côte d'Ivoire,2016,38.1
+Côte d'Ivoire,2017,44.5
+U.S.A.,2007,3840.6
+U.S.A.,2008,2845
+U.S.A.,2009,3718.8
+U.S.A.,2010,3890.2
+U.S.A.,2011,3945.6
+U.S.A.,2012,4288.6
+U.S.A.,2013,4339
+U.S.A.,2014,4080
+U.S.A.,2015,4302.4
+U.S.A.,2016,4487.9
+U.S.A.,2017,5050.6
+Mexico,2007,283
+Mexico,2008,180
+Mexico,2009,276.8
+Mexico,2010,303.5
+Mexico,2011,281
+Mexico,2012,300
+Mexico,2013,344
+Mexico,2014,284.9
+Mexico,2015,320.9
+Mexico,2016,365.1
+Mexico,2017,390.5
+Nicaragua,2007,12.8
+Nicaragua,2008,1
+Nicaragua,2009,1
+Nicaragua,2010,1
+Nicaragua,2011,2
+Nicaragua,2012,5.5
+Nicaragua,2013,6.1
+Nicaragua,2014,11.4
+Nicaragua,2015,17
+Nicaragua,2016,16.4
+Nicaragua,2017,27.6
+Estonia,2007,4
+Estonia,2008,6.3
+Estonia,2009,6
+Estonia,2010,8
+Estonia,2011,9.1
+Estonia,2012,10.6
+Estonia,2013,13
+Estonia,2014,11
+Estonia,2015,12
+Estonia,2016,12
+Estonia,2017,13
+Senegal,2007,6
+Senegal,2008,5
+Senegal,2009,5.1
+Senegal,2010,9
+Senegal,2011,10
+Senegal,2012,10
+Senegal,2013,13
+Senegal,2014,13
+Senegal,2015,13
+Senegal,2016,17
+Senegal,2017,20
+Austria,2007,38.4
+Austria,2008,17
+Austria,2009,22
+Austria,2010,35
+Austria,2011,40
+Austria,2012,40
+Austria,2013,39.9
+Austria,2014,42
+Austria,2015,31.1
+Austria,2016,36.6
+Austria,2017,40.4
+New Zealand,2007,383.3
+New Zealand,2008,292.4
+New Zealand,2009,328.1
+New Zealand,2010,339
+New Zealand,2011,337.2
+New Zealand,2012,303.4
+New Zealand,2013,357
+New Zealand,2014,356.7
+New Zealand,2015,318.3
+New Zealand,2016,313.4
+New Zealand,2017,338.8
+South Africa,2007,192
+South Africa,2008,185
+South Africa,2009,181
+South Africa,2010,172
+South Africa,2011,186
+South Africa,2012,190
+South Africa,2013,268
+South Africa,2014,264
+South Africa,2015,263
+South Africa,2016,235
+South Africa,2017,268
+Azerbaijan,2007,0
+Azerbaijan,2008,0
+Azerbaijan,2009,2.4
+Azerbaijan,2010,2.1
+Azerbaijan,2011,3
+Azerbaijan,2012,3.7
+Azerbaijan,2013,5.8
+Azerbaijan,2014,9
+Azerbaijan,2015,16.2
+Azerbaijan,2016,21
+Azerbaijan,2017,17.2
+Belarus,2007,191
+Belarus,2008,231.6
+Belarus,2009,234.6
+Belarus,2010,226
+Belarus,2011,292
+Belarus,2012,221
+Belarus,2013,199.3
+Belarus,2014,151
+Belarus,2015,135
+Belarus,2016,111.4
+Belarus,2017,114
+Latvia,2007,15
+Latvia,2008,9
+Latvia,2009,12
+Latvia,2010,11
+Latvia,2011,15
+Latvia,2012,19
+Latvia,2013,21
+Latvia,2014,21
+Latvia,2015,23
+Latvia,2016,34.1
+Latvia,2017,33.1
+Iraq,2007,91
+Iraq,2008,91
+Iraq,2009,91
+Iraq,2010,95
+Iraq,2011,95
+Iraq,2012,37.9
+Iraq,2013,80.7
+Iraq,2014,26.9
+Iraq,2015,62.9
+Iraq,2016,35.9
+Iraq,2017,71.9
+Bulgaria,2007,13
+Bulgaria,2008,4
+Bulgaria,2009,34
+Bulgaria,2010,36
+Bulgaria,2011,30
+Bulgaria,2012,91.2
+Bulgaria,2013,91.5
+Bulgaria,2014,121.3
+Bulgaria,2015,113.3
+Bulgaria,2016,116.4
+Bulgaria,2017,93.1
+Brazil,2007,3659
+Brazil,2008,3196
+Brazil,2009,3342
+Brazil,2010,3384
+Brazil,2011,3859.5
+Brazil,2012,4325.4
+Brazil,2013,4641
+Brazil,2014,4752.1
+Brazil,2015,4401
+Brazil,2016,4974
+Brazil,2017,5125.5
+Lithuania,2007,34
+Lithuania,2008,22
+Lithuania,2009,33.3
+Lithuania,2010,35
+Lithuania,2011,36
+Lithuania,2012,38
+Lithuania,2013,43
+Lithuania,2014,44.1
+Lithuania,2015,45.3
+Lithuania,2016,46.4
+Lithuania,2017,50.5
+Georgia,2007,0
+Georgia,2008,0
+Georgia,2009,0
+Georgia,2010,0
+Georgia,2011,0
+Georgia,2012,0
+Georgia,2013,1.5
+Georgia,2014,3.6
+Georgia,2015,4.3
+Georgia,2016,4.5
+Georgia,2017,3.8
+Kenya,2007,70
+Kenya,2008,63.7
+Kenya,2009,64.8
+Kenya,2010,75.3
+Kenya,2011,80
+Kenya,2012,77.6
+Kenya,2013,136.4
+Kenya,2014,103
+Kenya,2015,97.4
+Kenya,2016,129.6
+Kenya,2017,169
+Poland,2007,462
+Poland,2008,410
+Poland,2009,362
+Poland,2010,408
+Poland,2011,371
+Poland,2012,387
+Poland,2013,341
+Poland,2014,304
+Poland,2015,326
+Poland,2016,343.9
+Poland,2017,329.4
+Czechia,2007,60.7
+Czechia,2008,37.3
+Czechia,2009,33.4
+Czechia,2010,34.4
+Czechia,2011,36.2
+Czechia,2012,39
+Czechia,2013,49
+Czechia,2014,31.3
+Czechia,2015,43.2
+Czechia,2016,56.2
+Czechia,2017,56.6
+Russian Federation,2007,464.6
+Russian Federation,2008,507
+Russian Federation,2009,535
+Russian Federation,2010,530.4
+Russian Federation,2011,548.8
+Russian Federation,2012,564
+Russian Federation,2013,461.3
+Russian Federation,2014,541.9
+Russian Federation,2015,551.8
+Russian Federation,2016,698.7
+Russian Federation,2017,740.8
+Slovenia,2007,12
+Slovenia,2008,9
+Slovenia,2009,11
+Slovenia,2010,8
+Slovenia,2011,8
+Slovenia,2012,10
+Slovenia,2013,11.8
+Slovenia,2014,10.3
+Slovenia,2015,8.1
+Slovenia,2016,7.2
+Slovenia,2017,9.8
+Zambia,2007,8.8
+Zambia,2008,9
+Zambia,2009,8
+Zambia,2010,15.7
+Zambia,2011,24.5
+Zambia,2012,16
+Zambia,2013,30
+Zambia,2014,28
+Zambia,2015,39
+Zambia,2016,37
+Zambia,2017,28
+Israel,2007,17
+Israel,2008,17
+Israel,2009,15
+Israel,2010,15
+Israel,2011,15
+Israel,2012,15
+Israel,2013,7.7
+Israel,2014,5.9
+Israel,2015,9.7
+Israel,2016,6
+Israel,2017,6.3
+Peru,2007,68.7
+Peru,2008,40.2
+Peru,2009,55
+Peru,2010,57
+Peru,2011,75
+Peru,2012,65
+Peru,2013,81.2
+Peru,2014,107.1
+Peru,2015,85.4
+Peru,2016,95
+Peru,2017,95.9
+Denmark,2007,30
+Denmark,2008,17
+Denmark,2009,26
+Denmark,2010,12
+Denmark,2011,13
+Denmark,2012,12
+Denmark,2013,14
+Denmark,2014,32.1
+Denmark,2015,47.5
+Denmark,2016,34
+Denmark,2017,33
+Cuba,2007,7.7
+Cuba,2008,16.7
+Cuba,2009,13.1
+Cuba,2010,12.8
+Cuba,2011,15.2
+Cuba,2012,17.5
+Cuba,2013,13.1
+Cuba,2014,13.5
+Cuba,2015,28.7
+Cuba,2016,21.6
+Cuba,2017,14.2
+Mauritius,2007,6
+Mauritius,2008,5
+Mauritius,2009,4.7
+Mauritius,2010,4.9
+Mauritius,2011,5
+Mauritius,2012,4
+Mauritius,2013,4
+Mauritius,2014,2
+Mauritius,2015,2
+Mauritius,2016,3
+Mauritius,2017,3
+Turkmenistan,2007,5
+Turkmenistan,2008,5
+Turkmenistan,2009,5
+Turkmenistan,2010,5
+Turkmenistan,2011,5
+Turkmenistan,2012,5
+Turkmenistan,2013,5.5
+Turkmenistan,2014,6
+Turkmenistan,2015,32
+Turkmenistan,2016,18
+Turkmenistan,2017,19.6
+Bosnia and Herzegovina,2007,7
+Bosnia and Herzegovina,2008,5
+Bosnia and Herzegovina,2009,3.7
+Bosnia and Herzegovina,2010,4.4
+Bosnia and Herzegovina,2011,6.7
+Bosnia and Herzegovina,2012,7.4
+Bosnia and Herzegovina,2013,7.9
+Bosnia and Herzegovina,2014,7.5
+Bosnia and Herzegovina,2015,9.1
+Bosnia and Herzegovina,2016,9.2
+Bosnia and Herzegovina,2017,9
+Ukraine,2007,140
+Ukraine,2008,150
+Ukraine,2009,167
+Ukraine,2010,170
+Ukraine,2011,215.6
+Ukraine,2012,268.3
+Ukraine,2013,281
+Ukraine,2014,213.9
+Ukraine,2015,256.2
+Ukraine,2016,387.2
+Ukraine,2017,451.9
+Portugal,2007,48
+Portugal,2008,20
+Portugal,2009,27.6
+Portugal,2010,30
+Portugal,2011,29
+Portugal,2012,34
+Portugal,2013,37.5
+Portugal,2014,31
+Portugal,2015,31
+Portugal,2016,30
+Portugal,2017,31
+Malaysia,2007,256
+Malaysia,2008,177
+Malaysia,2009,230
+Malaysia,2010,279.9
+Malaysia,2011,300.4
+Malaysia,2012,320
+Malaysia,2013,320
+Malaysia,2014,347.9
+Malaysia,2015,364.1
+Malaysia,2016,311.3
+Malaysia,2017,365.3
+Korea Republic,2007,129.2
+Korea Republic,2008,90
+Korea Republic,2009,90
+Korea Republic,2010,100
+Korea Republic,2011,90
+Korea Republic,2012,90
+Korea Republic,2013,113.7
+Korea Republic,2014,128.6
+Korea Republic,2015,131.8
+Korea Republic,2016,131.2
+Korea Republic,2017,135
+Armenia,2007,0
+Armenia,2008,0
+Armenia,2009,0
+Armenia,2010,0
+Armenia,2011,0
+Armenia,2012,0
+Armenia,2013,0.1
+Armenia,2014,0.2
+Armenia,2015,0.1
+Armenia,2016,0.3
+Armenia,2017,0.2
+Uruguay,2007,110
+Uruguay,2008,80
+Uruguay,2009,100.6
+Uruguay,2010,105
+Uruguay,2011,114.2
+Uruguay,2012,114.5
+Uruguay,2013,219.5
+Uruguay,2014,195.9
+Uruguay,2015,143.6
+Uruguay,2016,167.1
+Uruguay,2017,159.9
+El Salvador,2007,12.8
+El Salvador,2008,5.7
+El Salvador,2009,7
+El Salvador,2010,13.6
+El Salvador,2011,7.9
+El Salvador,2012,20
+El Salvador,2013,13.9
+El Salvador,2014,1.2
+El Salvador,2015,16.3
+El Salvador,2016,12.2
+El Salvador,2017,15.5
+Thailand,2007,333
+Thailand,2008,296.5
+Thailand,2009,239.5
+Thailand,2010,301
+Thailand,2011,389.5
+Thailand,2012,400
+Thailand,2013,469.5
+Thailand,2014,626.2
+Thailand,2015,535.7
+Thailand,2016,548.3
+Thailand,2017,514.5
+Slovak Republic,2007,30
+Slovak Republic,2008,18
+Slovak Republic,2009,11
+Slovak Republic,2010,14
+Slovak Republic,2011,16
+Slovak Republic,2012,18
+Slovak Republic,2013,12
+Slovak Republic,2014,14
+Slovak Republic,2015,18
+Slovak Republic,2016,27.5
+Slovak Republic,2017,23.5
+Tajikistan,2007,0
+Tajikistan,2008,0
+Tajikistan,2009,0
+Tajikistan,2010,0
+Tajikistan,2011,0
+Tajikistan,2012,0
+Tajikistan,2013,0.2
+Tajikistan,2014,1.6
+Tajikistan,2015,0.5
+Tajikistan,2016,3.5
+Tajikistan,2017,8.9
+Hungary,2007,69.5
+Hungary,2008,40.4
+Hungary,2009,53
+Hungary,2010,43.7
+Hungary,2011,54
+Hungary,2012,62
+Hungary,2013,64
+Hungary,2014,68
+Hungary,2015,62.5
+Hungary,2016,65.5
+Hungary,2017,80.5
+Sweden,2007,33
+Sweden,2008,23
+Sweden,2009,20
+Sweden,2010,24
+Sweden,2011,26
+Sweden,2012,27
+Sweden,2013,27.4
+Sweden,2014,33.4
+Sweden,2015,30
+Sweden,2016,34.8
+Sweden,2017,35
+Afghanistan,2007,7.9
+Afghanistan,2008,8.7
+Afghanistan,2009,8.7
+Afghanistan,2010,8.7
+Afghanistan,2011,9
+Afghanistan,2012,1
+Afghanistan,2013,1.6
+Afghanistan,2014,2.8
+Afghanistan,2015,8.6
+Afghanistan,2016,9.1
+Afghanistan,2017,26
+Dominican Republic,2007,18.9
+Dominican Republic,2008,18.5
+Dominican Republic,2009,14.2
+Dominican Republic,2010,21.5
+Dominican Republic,2011,21.7
+Dominican Republic,2012,15.7
+Dominican Republic,2013,15.2
+Dominican Republic,2014,16
+Dominican Republic,2015,16.1
+Dominican Republic,2016,29.8
+Dominican Republic,2017,27.5
+Guatemala,2007,64.8
+Guatemala,2008,40
+Guatemala,2009,34.1
+Guatemala,2010,52.5
+Guatemala,2011,40
+Guatemala,2012,48.7
+Guatemala,2013,48.7
+Guatemala,2014,39.4
+Guatemala,2015,37
+Guatemala,2016,42.5
+Guatemala,2017,55.3
+Algeria,2007,26
+Algeria,2008,13.5
+Algeria,2009,48.8
+Algeria,2010,32.8
+Algeria,2011,36.5
+Algeria,2012,57.5
+Algeria,2013,71.3
+Algeria,2014,78
+Algeria,2015,63.2
+Algeria,2016,58.8
+Algeria,2017,30.5
+Netherlands,2007,45
+Netherlands,2008,33
+Netherlands,2009,24
+Netherlands,2010,24
+Netherlands,2011,16
+Netherlands,2012,15
+Netherlands,2013,13.8
+Netherlands,2014,14
+Netherlands,2015,15
+Netherlands,2016,17.6
+Netherlands,2017,12.5
+Turkey,2007,516.4
+Turkey,2008,328.5
+Turkey,2009,577.3
+Turkey,2010,514.5
+Turkey,2011,490.2
+Turkey,2012,532.2
+Turkey,2013,622.8
+Turkey,2014,570.2
+Turkey,2015,584.8
+Turkey,2016,792.4
+Turkey,2017,752.3
+Albania,2007,2.1
+Albania,2008,2
+Albania,2009,2.2
+Albania,2010,4.1
+Albania,2011,6.2
+Albania,2012,7
+Albania,2013,8.4
+Albania,2014,5.5
+Albania,2015,4
+Albania,2016,7.7
+Albania,2017,11.7
+Cyprus,2007,5
+Cyprus,2008,4.8
+Cyprus,2009,2
+Cyprus,2010,2
+Cyprus,2011,2
+Cyprus,2012,2
+Cyprus,2013,3.2
+Cyprus,2014,3.1
+Cyprus,2015,3.5
+Cyprus,2016,5.3
+Cyprus,2017,5.2
+Philippines,2007,120.3
+Philippines,2008,108.1
+Philippines,2009,105.5
+Philippines,2010,97.9
+Philippines,2011,60.2
+Philippines,2012,80.4
+Philippines,2013,112.4
+Philippines,2014,132.3
+Philippines,2015,122.7
+Philippines,2016,133.2
+Philippines,2017,135.8
+Canada,2007,669
+Canada,2008,575
+Canada,2009,630
+Canada,2010,723
+Canada,2011,799
+Canada,2012,831
+Canada,2013,887
+Canada,2014,945
+Canada,2015,1025
+Canada,2016,947
+Canada,2017,1080
+Uzbekistan,2007,120
+Uzbekistan,2008,150
+Uzbekistan,2009,110
+Uzbekistan,2010,116
+Uzbekistan,2011,105
+Uzbekistan,2012,109
+Uzbekistan,2013,115
+Uzbekistan,2014,116.6
+Uzbekistan,2015,123
+Uzbekistan,2016,138.5
+Uzbekistan,2017,143
+Ethiopia,2007,117
+Ethiopia,2008,105
+Ethiopia,2009,111.2
+Ethiopia,2010,120
+Ethiopia,2011,125
+Ethiopia,2012,165
+Ethiopia,2013,230
+Ethiopia,2014,187.2
+Ethiopia,2015,211.7
+Ethiopia,2016,216
+Ethiopia,2017,264.4
+Syria,2007,100.2
+Syria,2008,75.7
+Syria,2009,90
+Syria,2010,90.1
+Syria,2011,90
+Syria,2012,60
+Syria,2013,21
+Syria,2014,11
+Syria,2015,1
+Syria,2016,1.5
+Syria,2017,7.9
+Japan,2007,444.5
+Japan,2008,350
+Japan,2009,329.8
+Japan,2010,385.2
+Japan,2011,360
+Japan,2012,353.4
+Japan,2013,350
+Japan,2014,358.5
+Japan,2015,345.2
+Japan,2016,339.9
+Japan,2017,354.8
+United Kingdom,2007,215
+United Kingdom,2008,132
+United Kingdom,2009,188
+United Kingdom,2010,189.5
+United Kingdom,2011,188.1
+United Kingdom,2012,194
+United Kingdom,2013,201
+United Kingdom,2014,200
+United Kingdom,2015,196
+United Kingdom,2016,196
+United Kingdom,2017,192
+Australia,2007,982.2
+Australia,2008,818.3
+Australia,2009,641
+Australia,2010,816.8
+Australia,2011,873
+Australia,2012,802.7
+Australia,2013,816
+Australia,2014,918.6
+Australia,2015,963.2
+Australia,2016,889.5
+Australia,2017,817.5
+Moldova Republic of,2007,0
+Moldova Republic of,2008,0
+Moldova Republic of,2009,0
+Moldova Republic of,2010,0
+Moldova Republic of,2011,3
+Moldova Republic of,2012,3.2
+Moldova Republic of,2013,9.3
+Moldova Republic of,2014,12.3
+Moldova Republic of,2015,12.4
+Moldova Republic of,2016,19.2
+Moldova Republic of,2017,31
+Egypt,2007,169.4
+Egypt,2008,180.4
+Egypt,2009,150
+Egypt,2010,150.3
+Egypt,2011,150
+Egypt,2012,163
+Egypt,2013,190.1
+Egypt,2014,185.7
+Egypt,2015,332.4
+Egypt,2016,224.2
+Egypt,2017,264.3
+Others Africa,2007,90.1
+Others Africa,2008,100.3
+Others Africa,2009,116.5
+Others Africa,2010,121.1
+Others Africa,2011,132.1
+Others Africa,2012,117
+Others Africa,2013,144.4
+Others Africa,2014,128.5
+Others Africa,2015,148.8
+Others Africa,2016,224.9
+Others Africa,2017,202
+Others East Asia,2007,4
+Others East Asia,2008,4
+Others East Asia,2009,5.1
+Others East Asia,2010,6.1
+Others East Asia,2011,8.3
+Others East Asia,2012,7.5
+Others East Asia,2013,28.8
+Others East Asia,2014,32.5
+Others East Asia,2015,71.5
+Others East Asia,2016,33.4
+Others East Asia,2017,37.3
+Others Oceania,2007,7
+Others Oceania,2008,8.7
+Others Oceania,2009,9.8
+Others Oceania,2010,10.1
+Others Oceania,2011,10
+Others Oceania,2012,8
+Others Oceania,2013,2.5
+Others Oceania,2014,2.3
+Others Oceania,2015,1.7
+Others Oceania,2016,2.7
+Others Oceania,2017,3.4
+Others West Asia,2007,4
+Others West Asia,2008,6
+Others West Asia,2009,5
+Others West Asia,2010,5
+Others West Asia,2011,5
+Others West Asia,2012,6
+Others West Asia,2013,36.8
+Others West Asia,2014,26
+Others West Asia,2015,34.5
+Others West Asia,2016,33.8
+Others West Asia,2017,51.8
+Others Latin America,2007,96.4
+Others Latin America,2008,72.6
+Others Latin America,2009,24.3
+Others Latin America,2010,26.6
+Others Latin America,2011,85.3
+Others Latin America,2012,57.3
+Others Latin America,2013,256.9
+Others Latin America,2014,203.1
+Others Latin America,2015,160.5
+Others Latin America,2016,163.3
+Others Latin America,2017,337.8
+Paraguay,2007,0
+Paraguay,2008,0
+Paraguay,2009,129.1
+Paraguay,2010,152.4
+Paraguay,2011,207.7
+Paraguay,2012,158.7
+Paraguay,2013,175.3
+Paraguay,2014,218.9
+Paraguay,2015,215.6
+Paraguay,2016,215.3
+Paraguay,2017,173.3

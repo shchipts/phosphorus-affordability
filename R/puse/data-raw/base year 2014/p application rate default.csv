@@ -1,0 +1,109 @@
+"Region","Crop Group","P Rate"
+"Africa","Wheat",0.00304810606015526
+"Africa","Rice",0
+"Africa","Maize",0.00179610554670549
+"Africa","Other Cereals",0.000971899109041702
+"Africa","Soybean",0
+"Africa","Oil Palm",0.00128132833558387
+"Africa","Other Oilseeds",0.00161647590140116
+"Africa","Fibre Crops",0
+"Africa","Sugar Crops",0.000761359296176688
+"Africa","Roots and Tubers",7.97161064869632e-05
+"Africa","Fruits",0.000998418358107521
+"Africa","Vegetables",0.00175417606730536
+"East Asia","Wheat",0
+"East Asia","Rice",0.00073285435662465
+"East Asia","Maize",0
+"East Asia","Other Cereals",0
+"East Asia","Soybean",0
+"East Asia","Oil Palm",0.00259632628218549
+"East Asia","Other Oilseeds",0
+"East Asia","Fibre Crops",0
+"East Asia","Sugar Crops",0.000528568255221359
+"East Asia","Roots and Tubers",0.000528784731658762
+"East Asia","Fruits",0.000897687497050733
+"East Asia","Vegetables",0.000404522209736969
+"Eastern Europe and Central Asia","Wheat",0.00010930995032405
+"Eastern Europe and Central Asia","Rice",0.00491158307989115
+"Eastern Europe and Central Asia","Maize",0.000153033110296415
+"Eastern Europe and Central Asia","Other Cereals",7.98234747732448e-05
+"Eastern Europe and Central Asia","Soybean",0.00330608743588885
+"Eastern Europe and Central Asia","Oil Palm",NA
+"Eastern Europe and Central Asia","Other Oilseeds",0.000177063539265361
+"Eastern Europe and Central Asia","Fibre Crops",0
+"Eastern Europe and Central Asia","Sugar Crops",1.65848190933653e-05
+"Eastern Europe and Central Asia","Roots and Tubers",4.75272235455329e-05
+"Eastern Europe and Central Asia","Fruits",8.62295490924451e-05
+"Eastern Europe and Central Asia","Vegetables",5.31132656931936e-05
+"Latin America","Wheat",0.0022555130552554
+"Latin America","Rice",0.000957539418119815
+"Latin America","Maize",0.00360115793837641
+"Latin America","Other Cereals",0.000499097500021832
+"Latin America","Soybean",0.0037820480426328
+"Latin America","Oil Palm",0.00273451839372843
+"Latin America","Other Oilseeds",0.000884932999107861
+"Latin America","Fibre Crops",0.000295852009378869
+"Latin America","Sugar Crops",4.75530631805127e-05
+"Latin America","Roots and Tubers",0.00147253482202597
+"Latin America","Fruits",0.00118202728310921
+"Latin America","Vegetables",0.00175915647765053
+"North America","Wheat",0.00818085895781346
+"North America","Rice",0.00462029037982008
+"North America","Maize",0.00510233534728129
+"North America","Other Cereals",0.00832165024684451
+"North America","Soybean",0.00673773274504745
+"North America","Oil Palm",NA
+"North America","Other Oilseeds",0.00534692454334092
+"North America","Fibre Crops",0
+"North America","Sugar Crops",0.000561821252368532
+"North America","Roots and Tubers",0.00126683852623074
+"North America","Fruits",0.000974318955499953
+"North America","Vegetables",0.00157729934419684
+"Oceania","Wheat",0.0113082365003419
+"Oceania","Rice",0.0022448187324245
+"Oceania","Maize",0.0117278325474849
+"Oceania","Other Cereals",0.010573523048438
+"Oceania","Soybean",0
+"Oceania","Oil Palm",2.85985942751911e-05
+"Oceania","Other Oilseeds",4.33293428231977e-05
+"Oceania","Fibre Crops",0.00964176361119897
+"Oceania","Sugar Crops",7.8513578790365e-05
+"Oceania","Roots and Tubers",2.87241730081835e-05
+"Oceania","Fruits",8.24450329070836e-05
+"Oceania","Vegetables",0.000561481974891037
+"South Asia","Wheat",0.00580219761498286
+"South Asia","Rice",0.00201028423457727
+"South Asia","Maize",0.00592994817798233
+"South Asia","Other Cereals",0
+"South Asia","Soybean",0
+"South Asia","Oil Palm",NA
+"South Asia","Other Oilseeds",0.00196082709251769
+"South Asia","Fibre Crops",0.0106393557661049
+"South Asia","Sugar Crops",0.000697109547867617
+"South Asia","Roots and Tubers",0.00100076499082474
+"South Asia","Fruits",0.00151649757481054
+"South Asia","Vegetables",0.00171913270291963
+"Western and Central Europe","Wheat",0.00237549378801756
+"Western and Central Europe","Rice",0.00536092643061104
+"Western and Central Europe","Maize",0.0014394516665986
+"Western and Central Europe","Other Cereals",0.00265662174189484
+"Western and Central Europe","Soybean",0.0054492272177326
+"Western and Central Europe","Oil Palm",NA
+"Western and Central Europe","Other Oilseeds",0.00589288864516924
+"Western and Central Europe","Fibre Crops",0.00899422923298601
+"Western and Central Europe","Sugar Crops",0.000551962829405601
+"Western and Central Europe","Roots and Tubers",0.00138238050617228
+"Western and Central Europe","Fruits",0.00286982363976919
+"Western and Central Europe","Vegetables",0.0017676736927878
+"Western Asia","Wheat",4.45283634697182e-06
+"Western Asia","Rice",0.00370640027163228
+"Western Asia","Maize",0.00506367266973099
+"Western Asia","Other Cereals",3.25167899864729e-06
+"Western Asia","Soybean",0.0105245432348236
+"Western Asia","Oil Palm",NA
+"Western Asia","Other Oilseeds",7.21283799898315e-06
+"Western Asia","Fibre Crops",0.00655122010378701
+"Western Asia","Sugar Crops",0.000503550072179927
+"Western Asia","Roots and Tubers",1.93606298280095e-06
+"Western Asia","Fruits",3.51263603398922e-06
+"Western Asia","Vegetables",2.16361529104994e-06

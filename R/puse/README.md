@@ -6,13 +6,13 @@ This package contains two datasets
 
   Sources:
   - IFA, & IPNI. (2017). Assessment of Fertilizer Use by Crop at the Global Level 2014-2014/15 accessed from https://www.ifastat.org/plant-nutrition 
-  - Crop production 2007-2018 in FAOSTAT Crops database (2020) accessed from http://www.fao.org/faostat/en/#data/QC) 
-  - FAO "Business as Usual" and "Stratified Societies" scenarios crop production 2030 in FAO. (2018). The future of food and agriculture - Alternative pathways to 2050.
+  - Crop production 2007-2018 in FAOSTAT Crops database (2020) accessed from http://www.fao.org/faostat/en/#data/QC
+  - FAO "Business as Usual" and "Stratified Societies" scenarios crop production 2030 in FAO. (2018). The future of food and agriculture - Alternative pathways to 2050 accessed from http://www.fao.org/global-perspectives-studies/food-agriculture-projections-to-2050/en/
 
 * `pconsumption`: Phosphorus consumption in agriculture by region
   
   Sources:
-  - IFA Consumption database accessed from https://www.ifastat.org/databases/plant-nutrition).
+  - IFA Consumption database accessed from https://www.ifastat.org/databases/plant-nutrition
    
 ## Installation
 

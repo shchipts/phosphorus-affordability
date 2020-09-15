@@ -40,6 +40,7 @@ in.region <- read.csv("data-raw/companies.csv", check.names = FALSE)
 consumption <- read.csv(
   "data-raw/ifa supply db regional consumption.csv", 
   check.names = FALSE) %>%
+  filter(Year %in% 2013 : 2017) %>%
   select(-c("Year"))
 
 
@@ -95,5 +96,8 @@ cols <- colnames(dapmap.markets)
 cols[cols == "Exporter"] <- "Producer"
 colnames(dapmap.markets) <- cols
 
-write.csv(dapmap.markets, file = "data-raw/dapmap-markets.csv", row.names = FALSE)
+write.csv(
+  dapmap.markets,
+  file = "data-raw/dapmap-markets.csv", 
+  row.names = FALSE)
 usethis::use_data(dapmap.markets, overwrite = TRUE)

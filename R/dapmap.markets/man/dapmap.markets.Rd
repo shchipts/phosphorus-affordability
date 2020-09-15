@@ -68,9 +68,10 @@ The following conversion factors of product to P2O5 volumes were applied:
 }
 \references{
 \itemize{
-  \item UN Comtrade Database, accessed from https://comtrade.un.org/
+  \item UN Comtrade Database, downloaded from https://comtrade.un.org/ in Oct 2020
 
-	 \item IFA Supply Database, accessed from https://www.ifastat.org/supply/Phosphate%20Products/Processed%20Phosphates\item EuroChem 2013 Annual Report And Accounts: "Helping The World Grow". Downloaded from https://www.eurochemgroup.com/investors/reports-results/
+	 \item IFA Supply Database, downloaded from https://www.ifastat.org/supply/Phosphate\%20Products/Processed\%20Phosphates in Jun 2020
+  \item EuroChem 2013 Annual Report And Accounts: "Helping The World Grow". Downloaded from https://www.eurochemgroup.com/investors/reports-results/
 	 \item EuroChem Q4 2014 Press Release: "EuroChem Group AG Reports IFRS Financial Information for 2014". Downloaded from https://www.eurochemgroup.com/investors/reports-results/
 	 \item EuroChem 2016 Annual Report And Accounts: "Keeping Our Focus". Downloaded from https://www.eurochemgroup.com/investors/reports-results/
 	 \item EuroChem 2017 Annual Report And Accounts: "Building Momentum". Downloaded from https://www.eurochemgroup.com/investors/reports-results/

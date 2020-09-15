@@ -3,7 +3,7 @@ GENERAL INFORMATION
 
 Description: This compilation provides records on the DAP/MAP fertilizer consumption estimated from the IFA Supply Database.
 Author: Anna Shchiptsova
-Generated: 2020-02-12 
+Generated: 2020-06-06 
 Files: 'ifa supply db regional consumption.csv'
 
 ************************************
@@ -13,7 +13,7 @@ For the purpose of this document, the following definitions apply:
 DAP - diammonium phosphate,
 MAP - monoammonium phosphate.
 
-This compilation covers the period from 2013 to 2017.
+This compilation covers the period from 2007 to 2018.
 Countries are reported by ISO 3166 country code.
 
 Metric tonnes of P2O5 per annum are used for volumes throughout this compilation.
@@ -27,7 +27,7 @@ DATA STRUCTURE
 
 Year: year of operations
 Africa: consumption in countries
-	AGO, BDI, BEN, BFA, CAF, CIV, CMR, COD, COG, DJI, DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNQ, KEN, LBR, LBY, MAR, MDG, MLI, MOZ, MRT, MUS, MWI, NAM, NER, NGA, RWA, SDN, SEN, SLE, SOM, SWZ, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE
+	AGO, BDI, BEN, BFA, CAF, CIV, CMR, COD, COG, DJI, DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNQ, KEN, LBR, LBY, MAR, MDG, MLI, MOZ, MRT, MUS, MWI, NAM, NER, NGA, RWA, SDN, SEN, SLE, SOM, SWZ, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE, BWA, LSO
 East Asia: consumption in countries
 	CHN, BRN, IDN, JPN, KHM, KOR, LAO, MMR, MNG, MYS, PHL, PRK, SGP, THA, TLS, VNM
 Eastern Europe and Central Asia: consumption in countries

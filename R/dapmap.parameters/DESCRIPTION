@@ -1,0 +1,14 @@
+Package: dapmap.parameters
+Type: Package
+Title: TODO
+Version: 1.0.0
+Author: Anna Shchiptsova [aut, cre],
+  International Institute for Applied Systems Analysis [cph]
+Maintainer: Anna Shchiptsova <anna.shchiptsova1@gmail.com>
+Description: TODO
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+LazyData: true
+URL: https://github.com/shchipts/phosphorus-affordability/tree/master/R/dapmap.parameters
+RoxygenNote: 7.1.0

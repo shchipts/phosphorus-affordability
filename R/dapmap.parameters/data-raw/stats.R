@@ -2,12 +2,13 @@ library(dplyr)
 library(reshape2)
 
 demand <- read.csv("data-raw/bootstrap-demand.csv", check.names = FALSE)
+supply <- read.csv("data-raw/bootstrap-supply.csv", check.names = FALSE)
 
 sapply(
   c("Business As Usual", "Stratified Societies"),
   function(scenario) {
     
-    data <- demand %>% 
+    data1 <- demand %>% 
       filter(Scenario == scenario) %>%
       select(-Scenario) %>%
       melt(id = NULL) %>% 
@@ -29,7 +30,29 @@ sapply(
       as.data.frame()
     
     write.csv(
-      data,
+      data1,
       file = paste("data-raw/stats/demand ", scenario, ".csv", sep = ""),
+      row.names = FALSE)
+    
+    world_demand <- demand %>% 
+      filter(Scenario == scenario) %>%
+      select(-Scenario) %>%
+      mutate(World = rowSums(.)) %>% 
+      pull(World)
+    
+    data2 <- supply %>% 
+      filter(Scenario == scenario) %>%
+      select(-Scenario) %>%
+      mutate_all( ~ . / world_demand) %>%
+      melt(id = NULL) %>% 
+      rename(Producer = variable) %>%
+      group_by(Producer) %>%
+      summarise_all(list(mean = mean, sd = sd)) %>%
+      ungroup() %>%
+      as.data.frame()
+    
+    write.csv(
+      data2,
+      file = paste("data-raw/stats/supply ", scenario, ".csv", sep = ""),
       row.names = FALSE)
   })

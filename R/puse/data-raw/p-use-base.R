@@ -34,8 +34,10 @@ ifa_p_use_corrected <- ifa_p_use_data %>%
       Total = rowSums(ifa_p_use_data %>% select(-Area))), 
     by = c("Area")) %>%
   left_join(consumption, by = c("Area")) %>%
+  # original data is scaled to replicate country-region p use from IFASTAT Consumption Database;
   mutate(`Scaled value` = value * Consumption / Total) %>%
   dcast(Area + Region ~ variable, value.var = "Scaled value") %>%
+  # "Grassland" and "Other Crops" categories in IFA-IPNI data are omitted;
   select(-c(Grass, Residual)) %>%
   melt(id = c("Area", "Region")) %>%
   rename(`Crop Group` = variable, `P Use` = value)
@@ -58,6 +60,8 @@ p_use <-  crops_base %>%
     by = c("IFA Unit" = "Area", "Crop Group", "Region")) %>%
   group_by(`Crop Group`, `IFA Unit`) %>%
   group_modify(~{
+    # p uses in 28 european countries are derived from IFA-IPNI EU-28 p uses 
+    #   proportional to FAOSTAT crop production in these countries;
     if ((as.character(.y$`IFA Unit`) == "EU-28") &
         !isTRUE(all.equal(sum(pull(.x, Production)), 0)))
       .x %>% mutate(`P Use` = `P Use` * Production / sum(Production))
@@ -70,7 +74,7 @@ p_use <-  crops_base %>%
         !isTRUE(all.equal(sum(pull(.x, Production)), 0))) {
       
       # P uses by crops in the rest of a region preserve proportions from RoW 
-      # in the IFA-IPNI report
+      # in the IFA-IPNI report;
       p_use <- ifa_p_use_corrected %>%
         filter(
           Area == "RoW" &
@@ -96,7 +100,8 @@ p_use <-  crops_base %>%
   select(-c(`IFA Unit`)) %>%
   as.data.frame()
 
-# minimum p application rate in a region as regional default value  
+# default p application rate by crop group and region is derived as the 
+#   minimum application rate for a crop in a region.
 default_rates <- p_use %>%
   mutate(`P Rate` = `P Use` / Production) %>%
   select(c(Region, `Crop Group`, `P Rate`)) %>%

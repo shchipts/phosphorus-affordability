@@ -1,0 +1,52 @@
+NULL
+
+#' Estimates of phosphorus use in crop production by region
+#'
+#' This compilation provides records on the regional phosphorus (P) use in crop production 
+#' based on the IFA-IPNI assessment of fertilizer use 2014-2014/15. The compilation covers FAOSTAT crop production data for years 2007 to 2018, and
+#' FAO "Business as Usual" and "Stratified Societies" scenarios crop production data for year 2030.
+#' 
+#' Metric tonnes of P2O5 per annum are used for volumes throughout this compilation.
+#' 
+#' P use is estimated based on the assumption that I/O relationship between p use and crop production by country-region present in 2014 remains constant as in baseline scenario in Daberkow, S., Poulisse, J., & Vroomen, H, (2000).
+#' If crop was not produced in 2014, then default p application rate is used. Then, p use is aggregated by IFA region.
+#' 
+#' IFA-IPNI assesment of fertilizer use provides data on p use by 14 crop groups in 27 countries + EU-28 (94 percent of world consumption) and in the rest of the world (RoW) in calendar/fertilizer year 2014.
+#'
+#' Original data is mapped to p use by 12 crop groups in 55 countries and in the rest of 9 IFA regions using the following modifications:
+#' \itemize{
+#'   \item original data is scaled to replicate country-region p use from IFASTAT Consumption Database;
+#'   \item "Grassland" and "Other Crops" categories in IFA-IPNI data are omitted;
+#'   \item p uses in 28 european countries are derived from IFA-IPNI EU-28 p uses proportional to FAOSTAT crop production in these countries;
+#'   \item p uses by crop in the rest of a region preserve proportions from RoW in the IFA-IPNI report;
+#'   \item default p application rate by crop group and region is derived as the minimum application rate for a crop in a region.
+#' }
+#'
+#' 
+#' 
+#' IFA regional classification includes 
+#' \itemize{
+#'   \item Africa
+#'   \item East Asia
+#'   \item Eastern Europe and Central Asia
+#'   \item Latin America
+#'   \item North America
+#'   \item Oceania
+#'   \item South Asia
+#'   \item Western and Central Europe
+#'   \item Western Asia
+#' }
+#' 
+#' @docType data
+#'
+#' @format A data frame with 14 rows and 10 variables
+#'
+#' @references 
+#' \itemize{
+#'   \item IFA, & IPNI. (2017). Assessment of Fertilizer Use by Crop at the Global Level 2014-2014/15. Downloaded from https://www.ifastat.org/plant-nutrition
+#'   \item FAO. 2018. The future of food and agriculture - Alternative pathways to 2050. Rome.
+#' 	 \item FAOSTAT Crops database (2020). Downloaded from http://www.fao.org/faostat/en/#data/QC on Jun 2020.
+#'   \item Daberkow, S., Poulisse, J., & Vroomen, H, (2000). Fertlizer Requirements in 2015 and 2030. FAO.
+#' 	 \item IFASTAT Consumption database (2020). Downloaded from https://www.ifastat.org/databases/plant-nutrition on Jun 6th 2020. 	
+#' }
+"puse"

@@ -12,7 +12,7 @@ puse
 }
 \description{
 This compilation provides records on the regional phosphorus (P) use in crop production 
-based on the IFA-IPNI assessment of fertilizer use 2014-2014/15. This compilation covers FAOSTAT crop production data for years 2007 to 2018, and
+based on the IFA-IPNI assessment of fertilizer use 2014-2014/15. The compilation covers FAOSTAT crop production data for years 2007 to 2018, and
 FAO "Business as Usual" and "Stratified Societies" scenarios crop production data for year 2030.
 }
 \details{

@@ -6,6 +6,8 @@ This package contains three datasets with bootstrap samples
 * `bootstrap.supply`: DAP/MAP fertilizer supply by region in 2030 scenarios
 * `bootstrap.costs`: Market entry by international supplier and region in 2030 scenarios
 
+## Notes
+
 The following classifications used:  
 - scenarios (from FAO. (2018). The future of food and agriculture - Alternative pathways to 2050)  
   1\. Business as Usual  

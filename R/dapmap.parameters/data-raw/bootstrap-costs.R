@@ -16,7 +16,7 @@ sample_diff <- read.csv(
 demand <- read.csv("data-raw/bootstrap-demand.csv", check.names = FALSE)
 n_boot <- nrow(demand)
 
-# unrestricted wild residual bootstrap
+# wild unrestricted residual bootstrap
 k <- nrow(reference_points)
 model <- lm(Diff_Real_Market_Share ~ Diff_Tau + 0, data = sample_diff)
 r <- model$residuals - mean(model$residuals)
@@ -74,5 +74,3 @@ write.csv(
   file = "data-raw/bootstrap-costs.csv", 
   row.names = FALSE)
 usethis::use_data(bootstrap.costs, overwrite = TRUE)
-
-

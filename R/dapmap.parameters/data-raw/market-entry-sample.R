@@ -2,9 +2,11 @@ library(dapmap.markets)
 library(dplyr)
 library(reshape2)
 
-# Excludes import flows smaller than 1% of total import flows.
-# Excluded volume is added to domestic supply. Total consumption by region and 
-# year in corrected data is equal to total consumption in raw data.
+# 1. Filter the data on DAP/MAP fertilizer trade volumes in years 2013-2017 
+#    to exclude flows smaller than 1\% of total import flows to a region in 
+#    the year. Add excluded volume to regional domestic supply. 
+#    Total consumption by region and year in corrected data will be equal
+#    to total consumption in the raw data.
 markets_corrected <- dapmap.markets %>%  
   group_by(Year) %>%
   group_modify(~ {
@@ -37,36 +39,14 @@ markets_corrected <- dapmap.markets %>%
   relocate(Producer, Year) %>%
   as.data.frame()
 
-market_entry <- markets_corrected %>%
-  melt(id = c("Producer", "Year")) %>%
-  rename(Region = variable, Flow = value) %>%
-  filter(Flow != 0) %>%
-  group_by(Year) %>%
-  mutate(World = sum(Flow)) %>%
-  ungroup() %>%
-  group_by(Region, Year) %>%
-  mutate(Market = sum(Flow)) %>%
-  group_modify(
-    ~ .x %>% 
-      mutate(
-        Home = sum(
-          .x %>% 
-            filter(Producer == "Home and Other Imports") %>%
-            pull(Flow)))) %>%
-  ungroup() %>%
-  filter(Producer != "Home and Other Imports") %>%
-  mutate(`Market Price` = (Home + World - Market) / World) %>%
-  group_by(Year, Producer) %>%
-  mutate(`Producer Price` = min(`Market Price` - Flow / World)) %>%
-  ungroup() %>%
-  mutate(Tau = (`Market Price` - Flow / World - `Producer Price`)) %>%
-  as.data.frame() %>%
-  dcast(Year + Producer ~ Region, value.var = "Tau") %>%
-  arrange(Producer, Year)
-
 year <- 2014
 region <- "Latin America"
 
+# 2. Calculate nominal market share in global demand based on the filtered data.
+# 3. Find growth rate of Latin America's market share in global demand relative
+#    to the share in year 2014.
+# 4. Find real market share in global demand by dividing the nominal value by 
+#    the growth rate of Latin America's market share.
 data_markets <- markets_corrected %>%
   melt(id = c("Year", "Producer")) %>%
   rename(Region = variable, Volume = value) %>%
@@ -96,6 +76,35 @@ data_markets <- markets_corrected %>%
   mutate(Real_Market_Share = Market_Share * Index) %>%
   as.data.frame()
 
+# 5. Calculate trade cost from the equilibrium volumes for a supplier present 
+#    on a market with the assumption that trade cost for Latin America's market 
+#    equals 0.
+market_entry <- markets_corrected %>%
+  melt(id = c("Producer", "Year")) %>%
+  rename(Region = variable, Flow = value) %>%
+  filter(Flow != 0) %>%
+  group_by(Year) %>%
+  mutate(World = sum(Flow)) %>%
+  ungroup() %>%
+  group_by(Region, Year) %>%
+  mutate(Market = sum(Flow)) %>%
+  group_modify(
+    ~ .x %>% 
+      mutate(
+        Home = sum(
+          .x %>% 
+            filter(Producer == "Home and Other Imports") %>%
+            pull(Flow)))) %>%
+  ungroup() %>%
+  filter(Producer != "Home and Other Imports") %>%
+  mutate(`Market Price` = (Home + World - Market) / World) %>%
+  group_by(Year, Producer) %>%
+  mutate(`Producer Price` = min(`Market Price` - Flow / World)) %>%
+  ungroup() %>%
+  mutate(Tau = (`Market Price` - Flow / World - `Producer Price`)) %>%
+  as.data.frame() %>%
+  dcast(Year + Producer ~ Region, value.var = "Tau") %>%
+  arrange(Producer, Year)
 data <- market_entry %>%
   melt(id = c("Year", "Producer")) %>%
   rename(Region = variable, Tau = value) %>%
@@ -116,6 +125,9 @@ data <- market_entry %>%
       select(Year, Producer, Region, Real_Market_Share),
     by = c("Year", "Producer", "Region"))
 
+# 6. Compose a sample of differences in real market shares relative to base year
+#    2014, and a sample of differences in trade costs relative to base year 2014
+#    (for years 2015-2017).
 data_response <- data %>%
   group_by(Producer, Region) %>%
   mutate(n = n()) %>%

@@ -103,7 +103,7 @@ bootstrap.demand <- Reduce(
         
         bootstrap <- Reduce(
           function(s, i){
-            # unrestricted wild residual bootstrap
+            # wild unrestricted residual bootstrap
             bootstrap_r1 <- get_residuals(estimates$residuals_reduced)
             bootstrap_r2 <- get_residuals(estimates$residuals_structural)
             

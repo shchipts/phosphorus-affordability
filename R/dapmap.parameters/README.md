@@ -4,7 +4,7 @@ This package contains three datasets with bootstrap samples
 
 * `bootstrap.demand`: DAP/MAP fertilizer demand by region in 2030 scenarios
 * `bootstrap.supply`: DAP/MAP fertilizer supply by region in 2030 scenarios
-* `bootstrap.costs`: Market entry by international supplier and region in 2030 scenarios
+* `bootstrap.costs`: Trade costs by international supplier and region in 2030 scenarios
 
 ## Notes
 

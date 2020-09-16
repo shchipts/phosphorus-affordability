@@ -1,11 +1,12 @@
 Package: dapmap.parameters
 Type: Package
-Title: TODO
+Title: Bootstrap parameters for the model of distributed DAP/MAP commodity market
 Version: 1.0.0
 Author: Anna Shchiptsova [aut, cre],
   International Institute for Applied Systems Analysis [cph]
 Maintainer: Anna Shchiptsova <anna.shchiptsova1@gmail.com>
-Description: TODO
+Description: This compilation provides bootstrap samples for demand, supply and costs parameters
+	to run specific instances of distributed DAP/MAP market model
 License: MIT + file LICENSE
 Depends: 
     R (>= 2.10)

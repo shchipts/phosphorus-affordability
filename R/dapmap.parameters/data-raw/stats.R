@@ -55,4 +55,32 @@ sapply(
       data2,
       file = paste("data-raw/stats/supply ", scenario, ".csv", sep = ""),
       row.names = FALSE)
+    
+    data3 <- read.csv("data-raw/bootstrap-costs.csv", check.names = FALSE) %>%
+      filter(Scenario == scenario) %>%
+      select(-c(Scenario, Simulation)) %>%
+      melt(id = "Region") %>%
+      rename(Producer = variable) %>%
+      filter(!is.na(value)) %>%
+      group_by(Producer, Region) %>%
+      summarise_all(
+        list(
+          mean = mean,
+          sd = sd,
+          q05 = ~ quantile(., probs = .05),
+          q10 = ~ quantile(., probs = .10),
+          q25 = ~ quantile(., probs = .25),
+          q50 = ~ quantile(., probs = .50),
+          q75 = ~ quantile(., probs = .75),
+          q90 = ~ quantile(., probs = .90),
+          q95 = ~ quantile(., probs = .95))) %>%
+      mutate(quartile_dispersion = (q75 - q25) / (q75 + q25)) %>%
+      ungroup() %>%
+      arrange(Producer, Region) %>%
+      as.data.frame()
+    
+    write.csv(
+      data3, 
+      file = paste("data-raw/stats/costs ", scenario, ".csv", sep = ""), 
+      row.names = FALSE)
   })

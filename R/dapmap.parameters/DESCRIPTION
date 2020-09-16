@@ -1,6 +1,6 @@
 Package: dapmap.parameters
 Type: Package
-Title: Bootstrap parameters for the model of distributed DAP/MAP commodity market
+Title: Bootstrap parameters for distributed DAP/MAP market model
 Version: 1.0.0
 Author: Anna Shchiptsova [aut, cre],
   International Institute for Applied Systems Analysis [cph]

@@ -6,9 +6,10 @@ This package contains three datasets with bootstrap samples
 * `bootstrap.supply`: DAP/MAP fertilizer supply by IFA region in 2030 scenarios
 * `bootstrap.costs`: Market entry by international supplier and IFA region in 2030 scenarios
 
+
 Scenarios:
 - Business as Usual
-- Stratified Societies
+- Stratified Societies&nbsp;
 in FAO. (2018). The future of food and agriculture - Alternative pathways to 2050.
 
 Suppliers:

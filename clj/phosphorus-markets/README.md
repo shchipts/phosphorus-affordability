@@ -42,7 +42,7 @@ Requires Java SE 14.
    :demand "demand.csv"
    :entry {:africa "Africa.csv"
            :ea "East Asia.csv"
-		       :eeca "Eastern Europe and Central Asia.csv"
+           :eeca "Eastern Europe and Central Asia.csv"
            :la "Latin America.csv"
            :na "North America.csv"
            :oceania "Oceania.csv"

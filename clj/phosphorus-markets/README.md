@@ -20,16 +20,18 @@ Requires Java SE 14.
 
   $ lein run settings.edn
 
-  \* Options
+  ```
+  Options:
 
   -k, --number-of-chunks K  10   Chunk auctions into K-sized slices
   -s, --save PATH           bin  PATH to folder for output writing
   -t, --trace                    Print stack trace
   -h, --help                     Print command help
 
-  \* Arguments:
+  Arguments:
 
   settings-path   Path to the file with settings
+  ```
 
 ### Example of settings file
 
@@ -37,7 +39,7 @@ TODO
 
 ## Documentation
 
-* [API docs](https://shchipts.github.io/phosphorus-markets/)
+* [API docs](https://shchipts.github.io/phosphorus-affordability/)
 
 ## License
 

@@ -1,4 +1,4 @@
-(defproject org.iiasa/phosphorus-markets "0.1.0-SNAPSHOT"
+(defproject org.iiasa/phosphorus-markets "0.1.1-SNAPSHOT"
   :description "Equilibrium prices of distributed DAP/MAP commodity market"
   :scm {:name "git"
         :url "https://github.com/shchipts/phosphorus-affordability"

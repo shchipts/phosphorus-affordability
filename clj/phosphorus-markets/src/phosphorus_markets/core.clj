@@ -9,7 +9,8 @@
 (ns ^{:doc "Equilibrium prices of distributed DAP/MAP commodity market."
       :author "Anna Shchiptsova"}
  phosphorus-markets.core
-  (:require [phosphorus-markets.provider :as provider]
+  (:require [clojure.java.io :as io]
+            [phosphorus-markets.provider :as provider]
             [phosphorus-markets.simulator :as sim]
             [utilities-clj.cmd :as cmd]
             [utilities-clj.reader :as reader]
@@ -58,8 +59,10 @@
     :execute
     (fn [[pars] options]
       (time
-       (->> (reader/load-edn pars)
-            (#(provider/from % reader/read-csv))
+        (->> (io/file pars)
+            .getParent
+            (provider/from (reader/load-edn pars)
+                           reader/read-csv)
             ((fn [coll]
                (println (str "Total number of auctions: " (count coll)))
                (sim/prun coll options)))

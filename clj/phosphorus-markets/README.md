@@ -9,6 +9,8 @@ distinct markets based on the trade costs. The algorithm runs the generalized En
 auction for differentiated markets (Gul & Stacchetti 2000). Executes price adjustment
 procedure for different model parameterization provided in input files.
 
+Gul, F., & Stacchetti, E. (2000). The English Auction with Differentiated Commodities. Journal of Economic Theory, 92(1): 66-95. https://doi.org/10.1006/jeth.1999.2580
+
 ## Install
 
 No installation needed. This is a standalone java application.
@@ -33,9 +35,31 @@ Requires Java SE 14.
   settings-path   Path to the file with settings
   ```
 
-### Example of settings file
+### Settings example
 
-TODO
+  ```
+  {:supply "supply.csv"
+   :demand "demand.csv"
+   :entry {:africa "Africa.csv"
+           :ea "East Asia.csv"
+		       :eeca "Eastern Europe and Central Asia.csv"
+           :la "Latin America.csv"
+           :na "North America.csv"
+           :oceania "Oceania.csv"
+           :sa "South Asia.csv"
+           :europe "Western and Central Europe.csv"
+           :wa "Western Asia.csv"}
+   :markets {:africa "Africa"
+             :ea "East Asia"
+             :eeca "Eastern Europe and Central Asia"
+             :la "Latin America"
+             :na "North America"
+             :oceania "Oceania"
+             :sa "South Asia"
+             :europe "Western and Central Europe"
+             :wa "Western Asia"}}
+
+  ```
 
 ## Documentation
 

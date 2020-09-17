@@ -40,10 +40,11 @@
     demand :demand
     entry :entry
     names :markets}
-   readf]
+   readf
+   folder]
   (->> (vals entry)
        (into [supply demand])
-       (map (comp parse readf))
+       (map (comp parse readf #(str folder "/" %)))
        (split-at 2)
        ((juxt (comp vec first)
               #(apply map

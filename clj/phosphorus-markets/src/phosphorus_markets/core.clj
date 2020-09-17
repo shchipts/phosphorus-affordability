@@ -6,7 +6,7 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 
-(ns ^{:doc "Distributed market for phosphorus commodity."
+(ns ^{:doc "Equilibrium prices of distributed DAP/MAP commodity market."
       :author "Anna Shchiptsova"}
  phosphorus-markets.core
   (:require [phosphorus-markets.provider :as provider]
@@ -42,14 +42,16 @@
                    (provider/to m)))
 
 (defn -main
-  "Determines competitive equilibrium prices for distributed commodity market.
+  "Determines competitive equilibrium prices of distributed DAP/MAP
+  commodity market.
+
   The algorithm runs the generalized English auction for differentiated
-  phosphorus markets. Executes price adjustment procedure for different market
+  DAP/MAP markets. Executes price adjustment procedure for different model
   parameterization provided in input files."
   [& args]
   (cmd/terminal
    {:short-desc
-    "Equilibrium prices in distributed market for phosphorus commodity."
+    "Equilibrium prices of distributed DAP/MAP commodity market."
     :args args
     :args-desc cli-args
     :options cli-options

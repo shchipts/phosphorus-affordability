@@ -13,7 +13,7 @@
             [commodities-auction.auction :as auction]))
 
 (def ^:private supply
-  "Supply of import goods."
+  "Export supply."
   {:china 3511
    :maaden 1161
    :mosaic 3921

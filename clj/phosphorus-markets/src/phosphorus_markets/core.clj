@@ -59,7 +59,7 @@
     :execute
     (fn [[pars] options]
       (time
-        (->> (io/file pars)
+       (->> (io/file pars)
             .getParent
             (provider/from (reader/load-edn pars)
                            reader/read-csv)

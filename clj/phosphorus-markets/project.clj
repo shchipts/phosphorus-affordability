@@ -1,4 +1,4 @@
-(defproject org.iiasa/phosphorus-markets "0.1.1-SNAPSHOT"
+(defproject org.iiasa/phosphorus-markets "1.0.0"
   :description "Equilibrium prices of distributed DAP/MAP commodity market"
   :scm {:name "git"
         :url "https://github.com/shchipts/phosphorus-affordability"
@@ -13,7 +13,6 @@
   :plugins [[lein-codox "0.9.5"]]
   :codox {:output-path "docs"}
   :jvm-opts ^:replace ["-server" "-Xmx2g"]
-  :eval-in-leiningen true
   :main ^:skip-aot phosphorus-markets.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

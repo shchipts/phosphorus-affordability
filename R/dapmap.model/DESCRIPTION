@@ -1,0 +1,16 @@
+Package: dapmap.model
+Type: Package
+Title: Supply diversification and market concentration in distributed DAP/MAP market model
+Version: 1.0.0
+Author: Anna Shchiptsova [aut, cre],
+  International Institute for Applied Systems Analysis [cph]
+Maintainer: Anna Shchiptsova <anna.shchiptsova1@gmail.com>
+Description: This compilation provides assessments of diversification
+	for international suppliers, and concentration for regional markets
+	in the distributed DAP/MAP market model
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+LazyData: true
+URL: https://github.com/shchipts/phosphorus-affordability/tree/master/R/dapmap.model
+RoxygenNote: 7.1.0

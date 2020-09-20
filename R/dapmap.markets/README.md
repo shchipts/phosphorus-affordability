@@ -16,7 +16,7 @@ This package contains two datasets
 
 ## Notes
 
-The following classifications is used:  
+The following classification is used:  
 - regions (based on IFA regional classification https://www.ifastat.org/)  
   1\. Africa  
   2\. East Asia  

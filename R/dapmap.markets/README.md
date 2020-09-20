@@ -2,7 +2,7 @@
 
 This package contains two datasets
 
-* `dapmap.markets`: DAP/MAP fertilizer trade volumes by IFA region 2013-2017
+* `dapmap.markets`: DAP/MAP fertilizer trade volumes by region 2013-2017
 
    Sources: 
    - UN Comtrade data accessed from https://comtrade.un.org/
@@ -13,6 +13,20 @@ This package contains two datasets
 
    Sources: 
    - IFA Supply Database accessed from https://www.ifastat.org/supply/Phosphate\%20Products/Processed\%20Phosphates
+
+## Notes
+
+The following classifications is used:  
+- regions (based on IFA regional classification https://www.ifastat.org/)  
+  1\. Africa  
+  2\. East Asia  
+  3\. Eastern Europe and Central Asia  
+  4\. Latin America  
+  5\. North America  
+  6\. Oceania  
+  7\. South Asia  
+  8\. Western and Central Europe  
+  9\. Western Asia 
    
 ## Installation
 

@@ -9,7 +9,7 @@ This package contains three datasets with bootstrap samples
 ## Notes
 
 The following classifications are used:  
-- scenarios (from FAO. (2018). The future of food and agriculture - Alternative pathways to 2050)  
+- scenarios (from FAO. (2018). The future of food and agriculture - Alternative pathways to 2050 http://www.fao.org/global-perspectives-studies/food-agriculture-projections-to-2050/en/)  
   1\. Business as Usual  
   2\. Stratified Societies  
 - suppliers  

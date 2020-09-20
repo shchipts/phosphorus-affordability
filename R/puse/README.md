@@ -2,7 +2,7 @@
 
 This package contains two datasets
 
-* `puse`: Estimates of phosphorus use in agricultural crop production by IFA region in 2007-2018, and in 2030 scenarios
+* `puse`: Estimates of phosphorus use in agricultural crop production by region in 2007-2018, and in 2030 scenarios
 
   Sources:
   - IFA, & IPNI. (2017). Assessment of Fertilizer Use by Crop at the Global Level 2014-2014/15 accessed from https://www.ifastat.org/plant-nutrition 
@@ -13,6 +13,20 @@ This package contains two datasets
   
   Sources:
   - IFA Consumption database accessed from https://www.ifastat.org/databases/plant-nutrition
+  
+## Notes
+
+The following classification is used:  
+- regions (based on IFA regional classification https://www.ifastat.org/)  
+  1\. Africa  
+  2\. East Asia  
+  3\. Eastern Europe and Central Asia  
+  4\. Latin America  
+  5\. North America  
+  6\. Oceania  
+  7\. South Asia  
+  8\. Western and Central Europe  
+  9\. Western Asia 
    
 ## Installation
 

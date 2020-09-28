@@ -29,6 +29,19 @@ diversification <- function(data) {
     mutate_at(-1, ~ 1 - .)
 }
 
+self_sufficiency <- function(data) {
+  
+  return (
+    data %>%
+      group_by_at(2) %>%
+      group_modify(~ .x %>% mutate_if(is.numeric, ~ . / sum(.))) %>%
+      filter(producer == "Home and Other Imports") %>%
+      select(-producer) %>%
+      mutate_at(vars(-2), ~ replace(., . < 0 & abs(.) < 0.01, 0)) %>%
+      ungroup() %>% 
+      as.data.frame())
+}
+
 bundle <- Reduce(
   function(seed, scenario) {
     
@@ -109,16 +122,23 @@ bundle <- Reduce(
       rbind(
         seed[[2]],
         diversification(markets) %>%
+          mutate(Scenario = scenario)),
+      rbind(
+        seed[[3]],
+        self_sufficiency(markets) %>%
           mutate(Scenario = scenario))))
   },
   c("Business As Usual", "Stratified Societies"),
-  init = list(NULL, NULL))
+  init = list(NULL, NULL, NULL))
 
 concentration.observed <- concentration(dapmap.markets)
 diversification.observed <- diversification(dapmap.markets)
+self_sufficiency.observed <- self_sufficiency(
+  dapmap.markets %>% rename(producer = Producer))
 
 concentration.simulated <- select(bundle[[1]], Scenario, everything())
 diversification.simulated <- select(bundle[[2]], Scenario, everything())
+self_sufficiency.simulated <- select(bundle[[3]], Scenario, everything())
 
 write.csv(
   concentration.observed,
@@ -133,6 +153,12 @@ write.csv(
 usethis::use_data(diversification.observed, overwrite = TRUE)
 
 write.csv(
+  self_sufficiency.observed,
+  file = "data-raw/self_sufficiency-observed.csv",
+  row.names = FALSE)
+usethis::use_data(self_sufficiency.observed, overwrite = TRUE)
+
+write.csv(
   concentration.simulated,
   file = "data-raw/concentration-simulated.csv",
   row.names = FALSE)
@@ -143,3 +169,9 @@ write.csv(
   file = "data-raw/diversification-simulated.csv",
   row.names = FALSE)
 usethis::use_data(diversification.simulated, overwrite = TRUE)
+
+write.csv(
+  self_sufficiency.simulated,
+  file = "data-raw/self_sufficiency-simulated.csv",
+  row.names = FALSE)
+usethis::use_data(self_sufficiency.simulated, overwrite = TRUE)

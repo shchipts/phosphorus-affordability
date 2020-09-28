@@ -18,6 +18,7 @@ sapply(
         vars(simulation),
         list(
           mean = ~ mean(.),
+          sd = ~ sd(.),
           q05 = ~ quantile(., probs = .05),
           q10 = ~ quantile(., probs = .10),
           q25 = ~ quantile(., probs = .25),

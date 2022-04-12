@@ -1,14 +1,14 @@
 # dapmap.model
 
-This package contains four datasets with the estimates of the amount of competition in the distibuted model of DAP/MAP commodity markets
+This package contains four datasets with the estimates of the amount of competition in the distributed model of DAP/MAP commodity markets
 
 * `concentration.observed`: a normalized Herfindahl–Hirschman index of concentration (Hirschman 1964) by region  
 for DAP/MAP fertilizer trade volumes 2013-2017
-* `concentration.observed`: an inverse normalized Herfindahl–Hirschman index of diversification (Berry 1971) by international supplier  
+* `diversification.observed`: an inverse normalized Herfindahl–Hirschman index of diversification (Berry 1971) by international supplier  
 for DAP/MAP fertilizer trade volumes 2013-2017
 * `concentration.simulated`: a normalized Herfindahl–Hirschman index of concentration (Hirschman 1964) by region  
 for DAP/MAP fertilizer trade volumes in 2030 scenarios
-* `concentration.simulated`: an inverse normalized Herfindahl–Hirschman index of diversification (Berry 1971) by international supplier  
+* `diversification.simulated`: an inverse normalized Herfindahl–Hirschman index of diversification (Berry 1971) by international supplier  
 for DAP/MAP fertilizer trade volumes in 2030 scenarios
 
 The index of concentration takes the value 0 when a regional market is provided equally by all six suppliers (international suppliers plus domestic industry),

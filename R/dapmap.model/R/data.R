@@ -1,9 +1,11 @@
 #' Measures of competition for distributed DAP/MAP market model
 #'
 #' @seealso \code{\link{concentration.observed}}, 
-#' \code{\link{diversification.observed}}, 
+#' \code{\link{diversification.observed}},
+#' \code{\link{self_sufficiency.observed}}, 
 #' \code{\link{concentration.simulated}}, 
-#' \code{\link{diversification.simulated}}
+#' \code{\link{diversification.simulated}},
+#' \code{\link{self_sufficiency.simulated}}
 #' 
 #' @docType package
 #' @name dapmap.model
@@ -120,3 +122,40 @@ NULL
 #'   \item FAO. 2018. The future of food and agriculture - Alternative pathways to 2050. Rome.
 #' }
 "diversification.simulated"
+
+#' The market share of domestic supply observed by region and year
+#' 
+#' A market share of domestic supply by region for DAP/MAP fertilizer trade volumes 2013-2017.
+#'
+#' The market share of local suppliers takes the value 0 when a regional market is 
+#' provided only by international suppliers, and approaches 1 when the market in question has 
+#' only domestic supply.
+#' 
+#' The following definitions apply: DAP - diammonium phosphate, MAP - monoammonium phosphate.
+#' 
+#' Regional classification includes: Africa, East Asia, Eastern Europe and Central Asia, Latin America, North America, Oceania, South Asia, Western and Central Europe, and Western Asia.
+#'
+#' @docType data
+#'
+"self_sufficiency.observed"
+
+#' The market share of domestic supply observed by region and scenario
+#'
+#' A market share of domestic supply by region for DAP/MAP fertilizer trade 
+#' volumes in 2030 scenarios.
+#'
+#' The market share of local suppliers takes the value 0 when a regional market is 
+#' provided only by international suppliers, and approaches 1 when the market in question has 
+#' only domestic supply.
+#' 
+#' The following definitions apply: DAP - diammonium phosphate, MAP - monoammonium phosphate.
+#' 
+#' The compilation covers 1000 bootstrap simulations by distributed DAP/MAP 
+#' market model by FAO "Business as Usual" and "Stratified Societies" 
+#' scenarios year 2030.
+#' 
+#' Regional classification includes: Africa, East Asia, Eastern Europe and Central Asia, Latin America, North America, Oceania, South Asia, Western and Central Europe, and Western Asia.
+#'
+#' @docType data
+#'
+"self_sufficiency.simulated"

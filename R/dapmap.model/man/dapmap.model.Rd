@@ -6,7 +6,9 @@
 \title{Measures of competition for distributed DAP/MAP market model}
 \seealso{
 \code{\link{concentration.observed}}, 
-\code{\link{diversification.observed}}, 
+\code{\link{diversification.observed}},
+\code{\link{self_sufficiency.observed}}, 
 \code{\link{concentration.simulated}}, 
-\code{\link{diversification.simulated}}
+\code{\link{diversification.simulated}},
+\code{\link{self_sufficiency.simulated}}
 }

@@ -6,10 +6,12 @@ This package contains four datasets with the estimates of the amount of competit
 for DAP/MAP fertilizer trade volumes 2013-2017
 * `diversification.observed`: an inverse normalized Herfindahl–Hirschman index of diversification (Berry 1971) by international supplier  
 for DAP/MAP fertilizer trade volumes 2013-2017
+* `self_sufficiency.observed`: a market share of domestic supply by region for DAP/MAP fertilizer trade volumes 2013-2017
 * `concentration.simulated`: a normalized Herfindahl–Hirschman index of concentration (Hirschman 1964) by region  
 for DAP/MAP fertilizer trade volumes in 2030 scenarios
 * `diversification.simulated`: an inverse normalized Herfindahl–Hirschman index of diversification (Berry 1971) by international supplier  
 for DAP/MAP fertilizer trade volumes in 2030 scenarios
+* `self_sufficiency.simulated`: a market share of domestic supply by region for DAP/MAP fertilizer trade volumes in 2030 scenarios
 
 The index of concentration takes the value 0 when a regional market is provided equally by all six suppliers (international suppliers plus domestic industry),
 and approaches 1 when the market in question has a single supplier.  

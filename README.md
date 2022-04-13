@@ -1,5 +1,7 @@
 # phosphorus-affordability
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6457219.svg)](https://doi.org/10.5281/zenodo.6457219)
+
 Contains routines for application of the matching model of spatially distributed DAP/MAP commodity market to global crops production scenarios
 
 * `R/dapmap.markets`: 1. DAP/MAP fertilizer trade volumes by region 2013-2017 dataset 2. DAP/MAP consumption by region 2007-2018 dataset
